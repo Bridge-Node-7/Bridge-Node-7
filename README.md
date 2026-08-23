@@ -2,16 +2,16 @@
 
 **Frontier Intelligence Infrastructure™**
 
-### From evidence to defensible decision.
+### From evidence to defensible decisions.
 
-Bridge Node 7 connects evidence to trusted capability from source to system.
+Bridge Node 7 connects evidence to trusted capability, from source to system.
 
-**Evidence stays traceable. Unknowns stay visible. Consequential decisions stay human-owned.**
+**Evidence stays traceable. Uncertainty stays visible. Decisions stay human.**
 
 ## Selected public work
 
 **[Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission)**  
-Evidence-backed materials decisions from source evidence to a defined human decision.
+Evidence-backed materials intelligence from source to qualified decisions.
 
 **[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)**  
 Evidence-first workflows for consequential technology questions under uncertainty.
