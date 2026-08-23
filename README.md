@@ -4,7 +4,7 @@
 
 ### From evidence to defensible decisions.
 
-Bridge Node 7 connects evidence to trusted capability, from source to system.
+Bridge Node 7 transforms evidence into trusted decisions, from source to system.
 
 **Evidence stays traceable. Uncertainty stays visible. Decisions stay human.**
 
@@ -14,7 +14,7 @@ Bridge Node 7 connects evidence to trusted capability, from source to system.
 Evidence-backed materials intelligence from source to qualified decisions.
 
 **[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)**  
-Evidence-first workflows for consequential technology questions under uncertainty.
+Evidence-first workflows for emerging technology decisions under uncertainty.
 
 **[Pax Silica Intelligence](https://github.com/Bridge-Node-7/pax-silica)**  
 Reviewed public-source intelligence on strategic technology and industrial capability.
