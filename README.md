@@ -29,10 +29,10 @@ Human-governed assurance cases for bounded AI and cybersecurity decisions.
 **[Quantum Readiness for Space Communications](https://github.com/Bridge-Node-7/quantum-readiness-space-communications)**  
 Evidence-first methodology for cryptographic transition and mission-readiness decisions.
 
-### Decision Infrastructure
+### Strategic Resilience
 
 **[Frontier Decision Engine](https://github.com/Bridge-Node-7/frontier-decision-engine)**  
-Human-governed decision support for choices under deep uncertainty.
+Human-governed decision infrastructure for resilient choices under deep uncertainty.
 
 ## Explore
 
