@@ -1,23 +1,35 @@
 # Bridge Node 7
 
-**Frontier Intelligence Infrastructure™**
+**Frontier Intelligence · Mission Assurance · Strategic Resilience**
 
-### From evidence to defensible decisions.
+### Evidence to defensible decisions — from source to system to mission.
 
-Bridge Node 7 transforms evidence into trusted decisions, from source to system.
+Bridge Node 7 builds evidence-first systems for consequential technology decisions under uncertainty.
 
 **Evidence stays traceable. Uncertainty stays visible. Decisions stay human.**
 
 ## Selected public work
 
-**[Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission)**  
-Evidence-backed materials intelligence from source to qualified decisions.
+### Frontier Intelligence
 
 **[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)**  
-Evidence-first workflows for emerging technology decisions under uncertainty.
+Evidence-first workflows for emerging-technology decisions under uncertainty.
 
 **[Pax Silica Intelligence](https://github.com/Bridge-Node-7/pax-silica)**  
 Reviewed public-source intelligence on strategic technology and industrial capability.
+
+### Mission Assurance
+
+**[Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission)**  
+Traceable dependency intelligence from materials and sources to mission-relevant decisions.
+
+**[AI Cyber Assurance](https://github.com/Bridge-Node-7/ai-cyber-assurance)**  
+Human-governed assurance cases for bounded AI and cybersecurity decisions.
+
+**[Quantum Readiness for Space Communications](https://github.com/Bridge-Node-7/quantum-readiness-space-communications)**  
+Evidence-first methodology for cryptographic transition and mission-readiness decisions.
+
+### Decision Infrastructure
 
 **[Frontier Decision Engine](https://github.com/Bridge-Node-7/frontier-decision-engine)**  
 Human-governed decision support for choices under deep uncertainty.
