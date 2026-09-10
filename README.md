@@ -4,7 +4,7 @@
 
 ### Evidence to defensible decisions — from source to system to mission.
 
-Bridge Node 7 builds evidence-first systems for consequential technology decisions under uncertainty.
+Bridge Node 7 provides evidence-first verification and validation for consequential technologies under uncertainty.
 
 **Evidence stays traceable. Uncertainty stays visible. Decisions stay human.**
 
