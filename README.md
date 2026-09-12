@@ -8,6 +8,14 @@ Bridge Node 7 provides evidence-first verification and validation for consequent
 
 **Evidence stays traceable. Uncertainty stays visible. Decisions stay human.**
 
+## How the system connects
+
+Across the portfolio, the common operating pattern is:
+
+**Decision question → traceable evidence → explicit dependencies and uncertainty → bounded verification → accountable human decision → reassessment when conditions change.**
+
+Frontier Intelligence establishes what is known and what remains uncertain. Mission Assurance tests what must remain true. Strategic Resilience keeps the decision connected to changing dependencies, conditions, and failure modes.
+
 ## Selected public work
 
 This is a curated, intentionally non-exhaustive public surface. In selected repositories, `main` is the current reviewed source; GitHub Releases are explicit distribution milestones and may intentionally lag validated maintenance on `main`.
