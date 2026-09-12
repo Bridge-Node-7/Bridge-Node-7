@@ -10,6 +10,8 @@ Bridge Node 7 provides evidence-first verification and validation for consequent
 
 ## Selected public work
 
+This is a curated, intentionally non-exhaustive public surface. In selected repositories, `main` is the current reviewed source; GitHub Releases are explicit distribution milestones and may intentionally lag validated maintenance on `main`.
+
 ### Frontier Intelligence
 
 **[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)**  
