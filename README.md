@@ -30,6 +30,9 @@ Reviewed public-source intelligence on strategic technology and industrial capab
 
 ### Mission Assurance
 
+**[Frontier Mission Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance)**  
+Public reference implementation for evidence-native verification, reproducibility, traceability, and human-owned decision basis.
+
 **[Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission)**  
 Traceable dependency intelligence from materials and sources to mission-relevant decisions.
 
