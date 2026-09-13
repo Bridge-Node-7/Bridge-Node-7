@@ -47,6 +47,20 @@ Evidence-first methodology for cryptographic transition and mission-readiness de
 **[Frontier Decision Engine](https://github.com/Bridge-Node-7/frontier-decision-engine)**  
 Human-governed decision infrastructure for resilient choices under deep uncertainty.
 
+## License posture
+
+Each repository's own `LICENSE` file is authoritative. This matrix is a convenience summary only and does not replace repository-specific license terms.
+
+| Repository | License posture | Reuse boundary |
+| --- | --- | --- |
+| Frontier Intelligence Workflows | MIT | Reuse permitted under the repository MIT License. |
+| Pax Silica | MIT | Reuse permitted under the repository MIT License. |
+| Frontier Mission Assurance | All Rights Reserved / proprietary | No reuse license is granted except as explicitly stated by the repository. |
+| Materials-to-Mission | MIT | Reuse permitted under the repository MIT License. |
+| AI Cyber Assurance | MIT | Reuse permitted under the repository MIT License. |
+| Quantum Readiness for Space Communications | MIT | Reuse permitted under the repository MIT License. |
+| Frontier Decision Engine | Apache License 2.0 | Reuse permitted under Apache-2.0 subject to repository license terms. |
+
 ## Explore
 
 **[BridgeNode7.com](https://bridgenode7.com/)**
