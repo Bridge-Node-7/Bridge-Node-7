@@ -2,19 +2,19 @@
 
 **Frontier Intelligence · Mission Assurance · Strategic Resilience**
 
-### Evidence to defensible decisions — from source to system to mission.
+### Connecting evidence to trusted capability — from source to system to mission.
 
-Bridge Node 7 provides evidence-first verification and validation for consequential technologies under uncertainty.
+Bridge Node 7 builds evidence-native systems for frontier intelligence, mission assurance, and strategic resilience.
 
-**Evidence stays traceable. Uncertainty stays visible. Decisions stay human.**
+**Evidence stays traceable. Uncertainty stays visible. Capability stays verifiable. Decisions stay accountable.**
 
-## How the system connects
+## Advance Your Mission
 
 Across the portfolio, the common operating pattern is:
 
-**Decision question → traceable evidence → explicit dependencies and uncertainty → bounded verification → accountable human decision → reassessment when conditions change.**
+**Mission objective → traceable evidence → explicit dependencies and uncertainty → bounded verification → trusted capability → accountable decision → reassessment when conditions change.**
 
-Frontier Intelligence establishes what is known and what remains uncertain. Mission Assurance tests what must remain true. Strategic Resilience keeps the decision connected to changing dependencies, conditions, and failure modes.
+Frontier Intelligence establishes what is known and what remains uncertain. Mission Assurance verifies what must hold true. Strategic Resilience keeps capability connected to changing dependencies, conditions, and evidence.
 
 ## Selected public work
 
