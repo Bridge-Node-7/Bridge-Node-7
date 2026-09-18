@@ -1,66 +1,87 @@
 # Bridge Node 7
 
-**Frontier Intelligence · Mission Assurance · Strategic Resilience**
+## Evidence to trusted capability.
 
-### Connecting evidence to trusted capability — from source to system to mission.
+Bridge Node 7 builds evidence-to-decision infrastructure for frontier systems.
 
-Bridge Node 7 builds evidence-native systems for frontier intelligence, mission assurance, and strategic resilience.
+We help technical teams preserve clarity as programs evolve: **what is known, what remains assumed, what changed, what evidence still applies, and what an accountable human can justify now.**
 
-**Evidence stays traceable. Uncertainty stays visible. Capability stays verifiable. Decisions stay accountable.**
+**Clarity under uncertainty. Integrity of evidence. Trusted capability. Accountable decisions.**
 
-## Advance Your Mission
+## The operating arc
 
-Across the portfolio, the common operating pattern is:
+**Frontier Intelligence → Engineering Evidence → Mission Assurance → Accountable Decision → Reassessment**
 
-**Mission objective → traceable evidence → explicit dependencies and uncertainty → bounded verification → trusted capability → accountable decision → reassessment when conditions change.**
+Frontier Intelligence establishes what is happening and what remains uncertain. Engineering evidence makes consequential assumptions and results inspectable. Mission Assurance preserves the reviewable decision basis as systems change. Decision infrastructure carries governed context forward without replacing expert judgment or human authority.
 
-Frontier Intelligence establishes what is known and what remains uncertain. Mission Assurance verifies what must hold true. Strategic Resilience keeps capability connected to changing dependencies, conditions, and evidence.
+## Frontier Mission Assurance
 
-## Selected public work
+**[Frontier Mission Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance)** is the flagship assurance layer for consequential technical decisions.
 
-This is a curated, intentionally non-exhaustive public surface. In selected repositories, `main` is the current reviewed source; GitHub Releases are explicit distribution milestones and may intentionally lag validated maintenance on `main`.
+It is designed to answer four questions:
 
-### Frontier Intelligence
+- **What is supported?**
+- **What is still assumed?**
+- **What changed?**
+- **What must be reconsidered?**
 
-**[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)**  
-Evidence-first workflows for emerging-technology decisions under uncertainty.
+FMA connects claims, assumptions, experiments, evidence, expert review, dependencies, and decisions while keeping authoritative source systems authoritative.
 
-**[Pax Silica Intelligence](https://github.com/Bridge-Node-7/pax-silica)**  
-Reviewed public-source intelligence on strategic technology and industrial capability.
+**[Evaluate Frontier Mission Assurance →](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FIVE_MINUTE_EVALUATION.md)**
 
-### Mission Assurance
+## Frontier engineering
 
-**[Frontier Mission Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance)**  
-Public reference implementation for evidence-native verification, reproducibility, traceability, and human-owned decision basis.
+### Neutral-Atom Fault-Tolerant Quantum Computing
 
-**[Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission)**  
-Traceable dependency intelligence from materials and sources to mission-relevant decisions.
+Bridge Node 7 maintains a source-conscious intelligence and engineering surface for neutral-atom FTQC across architecture, quantum error correction, control, photonics, system performance, and verification.
 
-**[AI Cyber Assurance](https://github.com/Bridge-Node-7/ai-cyber-assurance)**  
-Human-governed assurance cases for bounded AI and cybersecurity decisions.
+**[Explore Neutral-Atom FTQC →](https://bridgenode7.com/neutral-atom-ftqc/)**
 
-**[Quantum Readiness for Space Communications](https://github.com/Bridge-Node-7/quantum-readiness-space-communications)**  
-Evidence-first methodology for cryptographic transition and mission-readiness decisions.
+### Materials-to-Mission
 
-### Strategic Resilience
+**[Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission)** connects source evidence, materials, components, systems, mission consequence, qualification state, and accountable decisions.
 
-**[Frontier Decision Engine](https://github.com/Bridge-Node-7/frontier-decision-engine)**  
-Human-governed decision infrastructure for resilient choices under deep uncertainty.
+**[Explore Materials-to-Mission →](https://github.com/Bridge-Node-7/materials-to-mission)**
 
-## License posture
+## Decision infrastructure
 
-Each repository's own `LICENSE` file is authoritative. This matrix is a convenience summary only and does not replace repository-specific license terms.
+**[Frontier Decision Engine](https://github.com/Bridge-Node-7/frontier-decision-engine)** prepares governed evidence, uncertainty, and changing conditions for accountable human decisions.
 
-| Repository | License posture | Reuse boundary |
-| --- | --- | --- |
-| Frontier Intelligence Workflows | MIT | Reuse permitted under the repository MIT License. |
-| Pax Silica | MIT | Reuse permitted under the repository MIT License. |
-| Frontier Mission Assurance | All Rights Reserved / proprietary | No reuse license is granted except as explicitly stated by the repository. |
-| Materials-to-Mission | MIT | Reuse permitted under the repository MIT License. |
-| AI Cyber Assurance | MIT | Reuse permitted under the repository MIT License. |
-| Quantum Readiness for Space Communications | MIT | Reuse permitted under the repository MIT License. |
-| Frontier Decision Engine | Apache License 2.0 | Reuse permitted under Apache-2.0 subject to repository license terms. |
+The comparison informs. **A person decides.**
 
-## Explore
+## Public Reference Surface
 
-**[BridgeNode7.com](https://bridgenode7.com/)**
+This GitHub is a **deliberately bounded public view of Bridge Node 7**.
+
+It contains selected reference implementations, portable contracts, synthetic examples, public-source evidence, validation tooling, and release proof. Each published repository is intended to be independently inspectable and truthful within its declared scope.
+
+**Operational deployments extend beyond this public surface.** Program-specific work can add governed evidence, private integrations, mission dependencies, expert review, decision history, advanced orchestration, and institutional intelligence.
+
+Authoritative systems and evidence remain where they belong.
+
+## Supporting public work
+
+- **[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)** — evidence-first workflows for emerging-technology decisions under uncertainty.
+- **[Pax Silica Intelligence](https://github.com/Bridge-Node-7/pax-silica)** — reviewed public-source intelligence on strategic technology and industrial capability.
+- **[AI Cyber Assurance](https://github.com/Bridge-Node-7/ai-cyber-assurance)** — human-governed assurance cases for bounded AI and cybersecurity decisions.
+- **[Quantum Readiness for Space Communications](https://github.com/Bridge-Node-7/quantum-readiness-space-communications)** — evidence-first methodology for cryptographic transition and mission-readiness decisions.
+
+## Collaborate
+
+Bridge Node 7 works selectively with frontier engineering teams, research organizations, mission programs, and strategic institutions where stronger evidence architecture can materially improve a consequential technical decision.
+
+A useful collaboration often begins with one question:
+
+> **What must be true for this capability to be trusted — and what evidence would change the decision?**
+
+**Technical evaluation · Research collaboration · Mission assurance · Strategic partnership · Institutional conversations**
+
+**[Partner with Bridge Node 7 →](https://bridgenode7.com/partner/)**
+
+[BridgeNode7.com](https://bridgenode7.com/) · [iam@bridgenode7.com](mailto:iam@bridgenode7.com)
+
+---
+
+**Bridge Node 7 · Evidence to trusted capability.**
+
+Licensing and reuse rights are defined by each repository's own license and documentation.
