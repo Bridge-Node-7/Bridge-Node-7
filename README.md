@@ -61,10 +61,6 @@ Each published repository is independently inspectable within its declared
 scope. Its documentation states what a machine result means, what it does not
 establish, and where human judgment remains required.
 
-Program-specific deployments can extend these references with governed evidence
-and integrations in the environment authorized for the work. Authoritative
-systems and evidence remain authoritative at source.
-
 ## Supporting public work
 
 - **[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)** — evidence-first workflows for emerging-technology decisions under uncertainty.
