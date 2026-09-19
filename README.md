@@ -49,15 +49,15 @@ Bridge Node 7 maintains a source-conscious intelligence and engineering surface 
 
 The comparison informs. **A person decides.**
 
-## Public Reference Surface
+## Public References
 
-This GitHub is a **deliberately bounded public view of Bridge Node 7**.
+This GitHub provides selected reference implementations, portable contracts,
+synthetic examples, public-source evidence, validation tooling, and release
+proof.
 
-It contains selected reference implementations, portable contracts, synthetic examples, public-source evidence, validation tooling, and release proof. Each published repository is intended to be independently inspectable and truthful within its declared scope.
-
-Program-specific evidence and integrations remain in governed environments and are not published here.
-
-Authoritative systems and evidence remain where they belong.
+Each published repository is independently inspectable within its declared
+scope. Its documentation states what a machine result means, what it does not
+establish, and where human judgment remains required.
 
 ## Supporting public work
 
