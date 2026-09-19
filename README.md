@@ -4,6 +4,8 @@
 
 Bridge Node 7 builds evidence-to-decision infrastructure for frontier systems.
 
+The repositories below are selected reference implementations. Program deployments apply the same evidence discipline within the environments authorized for the work.
+
 We help technical teams preserve clarity as programs evolve: **what is known, what remains assumed, what changed, what evidence still applies, and what an accountable human can justify now.**
 
 **Clarity under uncertainty. Integrity of evidence. Trusted capability. Accountable decisions.**
@@ -59,6 +61,10 @@ Each published repository is independently inspectable within its declared
 scope. Its documentation states what a machine result means, what it does not
 establish, and where human judgment remains required.
 
+Program-specific deployments can extend these references with governed evidence
+and integrations in the environment authorized for the work. Authoritative
+systems and evidence remain authoritative at source.
+
 ## Supporting public work
 
 - **[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)** — evidence-first workflows for emerging-technology decisions under uncertainty.
@@ -78,7 +84,7 @@ A useful collaboration often begins with one question:
 
 **[Partner with Bridge Node 7 →](https://bridgenode7.com/partner/)**
 
-[BridgeNode7.com](https://bridgenode7.com/) · [iam@bridgenode7.com](mailto:iam@bridgenode7.com)
+[BridgeNode7.com](https://bridgenode7.com/) · [contact@bridgenode7.com](mailto:contact@bridgenode7.com)
 
 ---
 
