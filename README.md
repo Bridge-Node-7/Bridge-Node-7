@@ -55,7 +55,7 @@ This GitHub is a **deliberately bounded public view of Bridge Node 7**.
 
 It contains selected reference implementations, portable contracts, synthetic examples, public-source evidence, validation tooling, and release proof. Each published repository is intended to be independently inspectable and truthful within its declared scope.
 
-**Operational deployments extend beyond this public surface.** Program-specific work can add governed evidence, private integrations, mission dependencies, expert review, decision history, advanced orchestration, and institutional intelligence.
+Program-specific evidence and integrations remain in governed environments and are not published here.
 
 Authoritative systems and evidence remain where they belong.
 
