@@ -4,7 +4,7 @@
 
 Bridge Node 7 builds evidence-to-decision infrastructure for frontier systems.
 
-The repositories below are selected reference implementations designed for direct evaluation, inspection, and reuse within their stated scope.
+The repositories below are selected reference implementations designed for direct evaluation, inspection, and, where each repository’s license allows, reuse within their stated scope.
 
 We help technical teams preserve clarity as programs evolve: **what is known, what remains assumed, what changed, what evidence still applies, and what an accountable human can justify now.**
 
