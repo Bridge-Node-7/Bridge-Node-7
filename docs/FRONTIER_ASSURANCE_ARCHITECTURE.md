@@ -82,6 +82,36 @@ continue execution
       targeted reassessment when material
 ```
 
+## Adaptive natural-systems design principles
+
+Bridge Node 7 treats the estate as a distributed adaptive system rather than a centralized application. Internally this is sometimes summarized as the **BN7 Brain** metaphor; operational documentation uses conventional engineering terms so the architecture remains understandable to external evaluators, partners, and adopters.
+
+The design draws on broadly useful patterns observed in resilient natural and engineered systems without claiming literal biological equivalence.
+
+- **Sparse activation.** Only systems that are affected by a change should activate. Unrelated repositories, contracts, and reviewers stay out of the path.
+- **Locality.** Solve and validate locally whenever the local authority has sufficient evidence and scope.
+- **Selective attention.** Escalate material novelty, uncertainty, contradiction, dependency change, handling change, or consequence; suppress routine noise.
+- **Stable interfaces with plastic internals.** Implementations may evolve rapidly behind explicit, versioned portable contracts.
+- **Graceful degradation.** Failure or unavailability of observation, one bounded capability, or one optional service must not disable unrelated engineering.
+- **Metacognition.** The estate should be able to establish its exact current state and affected relationships without granting the observer authority to change them.
+- **Homeostasis.** Complexity, coordination cost, maintenance, latency, compute, and human attention are system costs to minimize rather than signs of maturity.
+- **Pruning.** Preserve provenance and historical truth while retiring active complexity that no longer creates value.
+- **Consolidation.** Repeated evidence and experience may be synthesized asynchronously, but consolidation must not become an ordinary execution dependency.
+- **Outcome learning.** Decision-time state, observed outcomes, and reusable learning remain distinct. Reusable learning requires explicit governed promotion.
+- **Exploration / assurance separation.** Hypothesis generation stays inexpensive and broad; trusted capability remains evidence-backed, bounded, and reviewable.
+- **Human executive authority.** Accountable humans retain consequential judgment. Automation may accelerate preparation, validation, retrieval, and comparison.
+- **Complexity budget.** Every persistent control should remove more recurring work, uncertainty, or risk than it introduces.
+
+### AI, NLP, and machine-learning boundary
+
+AI, natural-language processing, and machine learning may improve sensing, retrieval, candidate extraction, synthesis, experimentation, anomaly detection, attention allocation, and calibration. Model output begins as candidate information unless a separately governed process promotes it.
+
+Models do not automatically become canonical truth, scientific authority, assurance authority, release authority, or consequential decision authority.
+
+The institutional architecture remains model-agnostic: changing an AI model, provider, or implementation must not destroy evidence lineage, decision history, contract identity, or governed knowledge.
+
+Machine-learning operations are earned infrastructure. Training pipelines, registries, feature stores, serving layers, or drift systems should be added only after a defined model task demonstrates prospective value beyond a simpler deterministic baseline.
+
 ## Human authority
 
 A machine PASS means only that the controls exercised by that machine check passed.
