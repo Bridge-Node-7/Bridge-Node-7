@@ -55,6 +55,33 @@ The current architecture includes bounded portable contracts for:
 
 Portable artifacts preserve their declared evidence and authority boundaries. Moving information between systems does not increase epistemic confidence or consequential authority.
 
+## Zero-drag assurance
+
+Assurance exists to accelerate trustworthy execution, not to create ceremony.
+
+- **Local changes remain local.** Repository-native engineering and validation stay the default fast path.
+- **Cross-system verification is impact-driven.** Revalidate only relationships that can be affected by a changed portable contract, handling boundary, or authority boundary.
+- **Estate observation is read-only and out of band.** It may summarize current state and identify affected relationships, but ordinary repository work does not depend on the observer being available.
+- **Missing observation is uncertainty, not an outage.** If estate evidence cannot be obtained, report `UNKNOWN`; do not convert missing evidence into a false PASS or block unrelated engineering.
+- **No authority escalation.** Observation never grants merge, release, production, promotion, certification, or consequential decision authority.
+- **Controls must remove more work than they create.** A control that materially lengthens ordinary engineering without demonstrated value should be simplified, moved out of band, or removed.
+
+The intended operating pattern is:
+
+```text
+change locally
+    ↓
+repository-native validation
+    ↓
+continue execution
+    ↘
+      read-only estate observation
+            ↓
+      affected relationships only
+            ↓
+      targeted reassessment when material
+```
+
 ## Human authority
 
 A machine PASS means only that the controls exercised by that machine check passed.
