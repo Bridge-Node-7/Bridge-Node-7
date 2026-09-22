@@ -1,0 +1,101 @@
+name: Validate control surface
+
+on:
+  pull_request:
+    paths:
+      - "README.md"
+      - "docs/**"
+      - ".github/workflows/validate.yml"
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "docs/**"
+      - ".github/workflows/validate.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          submodules: false
+          lfs: false
+
+      - name: Validate architecture and authority surface
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path.cwd().resolve()
+          required = [
+              Path("README.md"),
+              Path("docs/EXECUTION_AUTHORITY.md"),
+              Path("docs/FRONTIER_ASSURANCE_ARCHITECTURE.md"),
+          ]
+          for path in required:
+              assert path.is_file(), f"missing required control document: {path}"
+
+          readme = Path("README.md").read_text(encoding="utf-8")
+          for target in (
+              "docs/FRONTIER_ASSURANCE_ARCHITECTURE.md",
+              "docs/EXECUTION_AUTHORITY.md",
+          ):
+              assert target in readme, f"README missing control-surface link: {target}"
+
+          authority = Path("docs/EXECUTION_AUTHORITY.md").read_text(encoding="utf-8")
+          for state in (
+              "READ_ONLY",
+              "SIMULATION",
+              "CANDIDATE_BRANCH_ONLY",
+              "PR_ALLOWED",
+              "MERGE_ALLOWED",
+              "RELEASE_ALLOWED",
+              "PRODUCTION_ALLOWED",
+          ):
+              assert state in authority, f"missing execution state: {state}"
+          assert "must never be inferred from lower states" in authority
+          assert "Repository work does **not** imply authorization" in authority
+
+          architecture = Path("docs/FRONTIER_ASSURANCE_ARCHITECTURE.md").read_text(encoding="utf-8")
+          for phrase in (
+              "## Zero-drag assurance",
+              "Local changes remain local.",
+              "Cross-system verification is impact-driven.",
+              "Estate observation is read-only and out of band.",
+              "Controls must remove more work than they create.",
+              "## Repository-creation rule",
+              "Accountable human",
+          ):
+              assert phrase in architecture, f"missing architecture invariant: {phrase}"
+
+          link_pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+          for source in required:
+              text = source.read_text(encoding="utf-8")
+              for target in link_pattern.findall(text):
+                  if target.startswith(("http://", "https://", "mailto:", "#")):
+                      continue
+                  relative = target.split("#", 1)[0]
+                  if not relative:
+                      continue
+                  resolved = (source.parent / relative).resolve()
+                  try:
+                      resolved.relative_to(root)
+                  except ValueError as exc:
+                      raise AssertionError(f"relative link escapes repository: {source} -> {target}") from exc
+                  assert resolved.exists(), f"broken relative link: {source} -> {target}"
+
+          print("PASS control-surface validation")
+          PY
