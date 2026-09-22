@@ -71,7 +71,7 @@ jobs:
 
           architecture = Path("docs/FRONTIER_ASSURANCE_ARCHITECTURE.md").read_text(encoding="utf-8")
           for phrase in (
-              "## Zero-drag assurance",
+              "## Non-blocking assurance",
               "Local changes remain local.",
               "Cross-system verification is impact-driven.",
               "Estate observation is read-only and out of band.",
