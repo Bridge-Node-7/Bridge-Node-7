@@ -2,7 +2,7 @@
 
 ## Evidence to trusted capability.
 
-Bridge Node 7 builds evidence-to-decision infrastructure for frontier systems.
+Bridge Node 7 builds **Frontier Assurance Infrastructure**: evidence-to-decision infrastructure for frontier systems.
 
 The repositories below are selected reference implementations designed for direct evaluation, inspection, and, where each repository’s license allows, reuse within their stated scope.
 
@@ -13,6 +13,8 @@ We help technical teams preserve clarity as programs evolve: **what is known, wh
 ## The operating arc
 
 **Frontier Intelligence → Engineering Evidence → Mission Assurance → Accountable Decision → Reassessment**
+
+**[See the Frontier Assurance architecture →](docs/FRONTIER_ASSURANCE_ARCHITECTURE.md)** · **[Execution authority →](docs/EXECUTION_AUTHORITY.md)**
 
 Frontier Intelligence establishes what is happening and what remains uncertain. Engineering evidence makes consequential assumptions and results inspectable. Mission Assurance preserves the reviewable decision basis as systems change. Decision infrastructure carries governed context forward without replacing expert judgment or human authority.
 
@@ -29,7 +31,7 @@ It is designed to answer four questions:
 
 FMA connects claims, assumptions, experiments, evidence, expert review, dependencies, and decisions while keeping authoritative source systems authoritative.
 
-**[Evaluate Frontier Mission Assurance →](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FIVE_MINUTE_EVALUATION.md)**
+**[Evaluate Frontier Mission Assurance →](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FIVE_MINUTE_EVALUATION.md)** · **[Follow the FTQC golden path →](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FTQC_GOLDEN_PATH.md)**
 
 ## Frontier engineering
 
