@@ -26,6 +26,17 @@ outcome / new information
 
 The useful output is not a larger graph. It is less hidden uncertainty around a consequential decision.
 
+## Decision-maker experience
+
+The architecture should absorb reconstruction work rather than distribute it to decision-makers.
+
+The first human-facing projection is the [Decision Surface](DECISION_SURFACE.md): a minimum-cognitive-load view of what needs attention, why now, what changed, what the current evidence supports, what remains unknown, the smallest supportable next move, and what requires human judgment.
+
+The Decision Surface is a presentation pattern, not a new canonical authority or portable contract. It uses progressive disclosure so the same governed basis can support executive, technical, and evidence-depth views without duplicating truth.
+
+**NO ACTION REQUIRED** is a valid outcome when no material decision basis changed.
+
+
 ## Canonical authority map
 
 Each system owns one bounded responsibility.

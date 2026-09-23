@@ -44,6 +44,7 @@ jobs:
               Path("README.md"),
               Path("docs/EXECUTION_AUTHORITY.md"),
               Path("docs/FRONTIER_ASSURANCE_ARCHITECTURE.md"),
+              Path("docs/DECISION_SURFACE.md"),
           ]
           for path in required:
               assert path.is_file(), f"missing required control document: {path}"
@@ -52,6 +53,7 @@ jobs:
           for target in (
               "docs/FRONTIER_ASSURANCE_ARCHITECTURE.md",
               "docs/EXECUTION_AUTHORITY.md",
+              "docs/DECISION_SURFACE.md",
           ):
               assert target in readme, f"README missing control-surface link: {target}"
 
@@ -68,6 +70,18 @@ jobs:
               assert state in authority, f"missing execution state: {state}"
           assert "must never be inferred from lower states" in authority
           assert "Repository work does **not** imply authorization" in authority
+
+          decision_surface = Path("docs/DECISION_SURFACE.md").read_text(encoding="utf-8")
+          for phrase in (
+              "## Core surface",
+              "## Progressive disclosure",
+              "## Minimum necessary human contribution",
+              "## Materiality and silence",
+              "NO ACTION REQUIRED",
+              "## Authority boundary",
+              "The human still decides.",
+          ):
+              assert phrase in decision_surface, f"missing decision-surface invariant: {phrase}"
 
           architecture = Path("docs/FRONTIER_ASSURANCE_ARCHITECTURE.md").read_text(encoding="utf-8")
           for phrase in (

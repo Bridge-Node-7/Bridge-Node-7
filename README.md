@@ -14,7 +14,7 @@ We help technical teams preserve clarity as programs evolve: **what is known, wh
 
 **Frontier Intelligence → Engineering Evidence → Mission Assurance → Accountable Decision → Reassessment**
 
-**[See the Frontier Assurance architecture →](docs/FRONTIER_ASSURANCE_ARCHITECTURE.md)** · **[Execution authority →](docs/EXECUTION_AUTHORITY.md)**
+**[See the Frontier Assurance architecture →](docs/FRONTIER_ASSURANCE_ARCHITECTURE.md)** · **[Decision Surface →](docs/DECISION_SURFACE.md)** · **[Execution authority →](docs/EXECUTION_AUTHORITY.md)**
 
 Frontier Intelligence establishes what is happening and what remains uncertain. Engineering evidence makes consequential assumptions and results inspectable. Mission Assurance preserves the reviewable decision basis as systems change. Decision infrastructure carries governed context forward without replacing expert judgment or human authority.
 
