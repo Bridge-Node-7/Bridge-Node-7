@@ -63,6 +63,14 @@ Each published repository is independently inspectable within its declared
 scope. Its documentation states what a machine result means, what it does not
 establish, and where human judgment remains required.
 
+## Canonical source and attribution
+
+The canonical public source for Bridge Node 7 software, documentation, and release references is **[github.com/Bridge-Node-7](https://github.com/Bridge-Node-7)** together with **[BridgeNode7.com](https://bridgenode7.com/)**.
+
+Forks, mirrors, copied repositories, repackaged artifacts, screenshots, or derivative distributions are not authoritative Bridge Node 7 releases unless they are explicitly linked from one of those canonical surfaces.
+
+Reuse rights remain defined by each repository's own license and notice. When a repository provides citation metadata or tagged releases, cite the exact release or commit used.
+
 ## Supporting public work
 
 - **[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)** — evidence-first workflows for emerging-technology decisions under uncertainty.
