@@ -4,12 +4,14 @@ on:
   pull_request:
     paths:
       - "README.md"
+      - "LICENSE"
       - "docs/**"
       - ".github/workflows/validate.yml"
   push:
     branches: [main]
     paths:
       - "README.md"
+      - "LICENSE"
       - "docs/**"
       - ".github/workflows/validate.yml"
 
@@ -42,12 +44,21 @@ jobs:
           root = Path.cwd().resolve()
           required = [
               Path("README.md"),
+              Path("LICENSE"),
               Path("docs/EXECUTION_AUTHORITY.md"),
               Path("docs/FRONTIER_ASSURANCE_ARCHITECTURE.md"),
               Path("docs/DECISION_SURFACE.md"),
           ]
           for path in required:
               assert path.is_file(), f"missing required control document: {path}"
+
+          license_text = Path("LICENSE").read_text(encoding="utf-8")
+          for phrase in (
+              "Copyright © 2026 Bridge Node 7. All rights reserved.",
+              "No license to copy, modify, distribute, sublicense, sell, or create derivative",
+              "Repositories linked from this profile are separate works governed by their own",
+          ):
+              assert phrase in license_text, f"LICENSE missing rights invariant: {phrase}"
 
           readme = Path("README.md").read_text(encoding="utf-8")
           for target in (
