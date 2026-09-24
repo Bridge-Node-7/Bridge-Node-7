@@ -57,6 +57,16 @@ jobs:
           ):
               assert target in readme, f"README missing control-surface link: {target}"
 
+
+          for phrase in (
+              "## Canonical source and attribution",
+              "https://github.com/Bridge-Node-7",
+              "https://bridgenode7.com/",
+              "not authoritative Bridge Node 7 releases",
+              "Reuse rights remain defined by each repository's own license and notice.",
+          ):
+              assert phrase in readme, f"README missing canonical-source invariant: {phrase}"
+
           authority = Path("docs/EXECUTION_AUTHORITY.md").read_text(encoding="utf-8")
           for state in (
               "READ_ONLY",
