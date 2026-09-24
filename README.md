@@ -63,6 +63,8 @@ Each published repository is independently inspectable within its declared
 scope. Its documentation states what a machine result means, what it does not
 establish, and where human judgment remains required.
 
+**[IP provenance & attribution →](docs/IP_PROVENANCE_AND_ATTRIBUTION.md)** — canonical public origin, licensing boundaries, release authenticity, and misattribution reporting.
+
 ## Supporting public work
 
 - **[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)** — evidence-first workflows for emerging-technology decisions under uncertainty.
