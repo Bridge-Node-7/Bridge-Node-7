@@ -20,7 +20,7 @@ Frontier Intelligence establishes what is happening and what remains uncertain. 
 
 ## Frontier Mission Assurance
 
-**[Frontier Mission Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance)** is the flagship assurance layer for consequential technical decisions.
+**[Frontier Mission Assurance](https://bridgenode7.com/frontier-mission-assurance/)** is the flagship assurance layer for consequential technical decisions.
 
 It is designed to answer four questions:
 
@@ -31,7 +31,7 @@ It is designed to answer four questions:
 
 FMA connects claims, assumptions, experiments, evidence, expert review, dependencies, and decisions while keeping authoritative source systems authoritative.
 
-**[Evaluate Frontier Mission Assurance →](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FIVE_MINUTE_EVALUATION.md)** · **[Follow the FTQC golden path →](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FTQC_GOLDEN_PATH.md)**
+**[Evaluate Frontier Mission Assurance →](https://bridgenode7.com/frontier-mission-assurance/)** · **[Follow the FTQC golden path →](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FTQC_GOLDEN_PATH.md)**
 
 ## Frontier engineering
 
