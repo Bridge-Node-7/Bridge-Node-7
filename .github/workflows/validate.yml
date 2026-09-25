@@ -170,22 +170,28 @@ jobs:
           grep -F "All rights reserved." <<<"$fma_license" >/dev/null
           grep -F "provided for evaluation and review only." <<<"$fma_license" >/dev/null
 
-          private_repo_names=(
-            "mission-graph"
-            "intelligence-library"
-            "neutral-atom-ftqc"
-            "gallium-power-electronics-validation"
-            "fundamental-interaction-tomography"
+          expected_public_repos=(
+            "Bridge-Node-7"
+            "ai-cyber-assurance"
+            "frontier-decision-engine"
+            "frontier-intelligence-workflows"
+            "frontier-mission-assurance"
+            "materials-to-mission"
+            "pax-silica"
+            "quantum-readiness-space-communications"
           )
 
-          for repo in "${private_repo_names[@]}"; do
-            status="$(
-              curl --silent --show-error --location                 --output /dev/null                 --write-out "%{http_code}"                 -H "Accept: application/vnd.github+json"                 "https://api.github.com/repos/Bridge-Node-7/$repo"
-            )"
-            if [ "$status" != "404" ]; then
-              echo "STOP - expected private repository name is publicly reachable: Bridge-Node-7/$repo (HTTP $status)"
-              exit 1
-            fi
-          done
+          mapfile -t observed_public_repos < <(
+            curl --fail --silent --show-error --location               -H "Accept: application/vnd.github+json"               "https://api.github.com/users/Bridge-Node-7/repos?type=owner&per_page=100"               | jq -r '.[] | select(.fork == false) | .name'               | sort
+          )
+
+          mapfile -t expected_public_repos_sorted < <(
+            printf '%s\n' "${expected_public_repos[@]}" | sort
+          )
+
+          if ! diff -u             <(printf '%s\n' "${expected_public_repos_sorted[@]}")             <(printf '%s\n' "${observed_public_repos[@]}"); then
+            echo "STOP - public repository exposure surface changed unexpectedly."
+            exit 1
+          fi
 
           echo "PASS public repository rights and exposure surface"
