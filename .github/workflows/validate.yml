@@ -14,6 +14,9 @@ on:
       - "LICENSE"
       - "docs/**"
       - ".github/workflows/validate.yml"
+  schedule:
+    - cron: "29 12 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -134,3 +137,37 @@ jobs:
 
           print("PASS control-surface validation")
           PY
+
+
+  public-estate-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Verify public repository rights surface
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          declare -A expected_spdx=(
+            [frontier-mission-assurance]="NOASSERTION"
+            [frontier-decision-engine]="Apache-2.0"
+            [materials-to-mission]="MIT"
+            [frontier-intelligence-workflows]="MIT"
+            [pax-silica]="MIT"
+            [ai-cyber-assurance]="MIT"
+            [quantum-readiness-space-communications]="MIT"
+          )
+
+          for repo in "${!expected_spdx[@]}"; do
+            metadata="$(curl --fail --silent --show-error --location               -H "Accept: application/vnd.github+json"               "https://api.github.com/repos/Bridge-Node-7/$repo")"
+            test "$(jq -r '.visibility' <<<"$metadata")" = "public"
+            test "$(jq -r '.default_branch' <<<"$metadata")" = "main"
+            test "$(jq -r '.license.spdx_id // ""' <<<"$metadata")" = "${expected_spdx[$repo]}"
+            curl --fail --silent --show-error --location               "https://raw.githubusercontent.com/Bridge-Node-7/$repo/main/LICENSE"               >/dev/null
+          done
+
+          fma_license="$(curl --fail --silent --show-error --location             "https://raw.githubusercontent.com/Bridge-Node-7/frontier-mission-assurance/main/LICENSE")"
+          grep -F "All rights reserved." <<<"$fma_license" >/dev/null
+          grep -F "provided for evaluation and review only." <<<"$fma_license" >/dev/null
+
+          echo "PASS public repository rights surface"
