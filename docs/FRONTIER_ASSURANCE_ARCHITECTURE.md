@@ -26,6 +26,8 @@ outcome / new information
 
 The useful output is not a larger graph. It is less hidden uncertainty around a consequential decision.
 
+The [Decision Lifecycle](DECISION_LIFECYCLE.md) defines how these bounded authorities compose from a decision question through decision memory, observed outcome, and reassessment. Systems activate only when their authority is material to the decision.
+
 ## Decision-maker experience
 
 The architecture should absorb reconstruction work rather than distribute it to decision-makers.
