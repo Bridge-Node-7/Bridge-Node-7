@@ -36,6 +36,25 @@ reassessment
 
 The path is compositional rather than mandatory. A decision uses only the systems needed to resolve its material uncertainty and preserve its decision basis.
 
+## Operational use
+
+The same lifecycle applies to internal and external work. The decision owner, evidence, handling boundary, and activated assurance systems may differ; the authority model does not.
+
+For operational cases:
+
+- begin with one bounded decision question, accountable owner, and evidence cutoff;
+- keep case-specific non-public evidence and working records in the authorized working environment or governed private system;
+- keep public repositories limited to reusable methods, portable contracts, synthetic examples, and material explicitly approved for public release;
+- use Frontier Intelligence Workflows to structure research and produce a decision-ready brief when research is required;
+- preserve the governed evidence basis and material unknowns before the accountable decision;
+- activate domain assurance, Frontier Mission Assurance, or Mission Graph only when each materially improves the decision basis;
+- present the Decision Surface with the supportable disposition or next move first;
+- record the accountable human decision through Frontier Decision Engine when a durable Decision Receipt is required;
+- move a supported Decision Receipt into Intelligence Library only as a review-required Decision candidate, never as automatic promotion;
+- record the observed outcome when reality becomes observable, preserve the historical decision, and reassess when a reopen condition is triggered.
+
+Internal use is not a lower-assurance mode. Customer, partner, program, and internal decisions use the same evidence, authority, handling, and outcome boundaries.
+
 ## Decision first
 
 The first human-facing view should state the supportable disposition or next move before presenting supporting detail.
