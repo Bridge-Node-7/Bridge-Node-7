@@ -14,7 +14,11 @@ The operating objective is:
 
 > **Do the reconstruction, synthesis, and challenge before the accountable human arrives. Surface the smallest trustworthy decision view that preserves access to the evidence behind it.**
 
-The useful result is less cognitive reconstruction around an important decision.
+The useful result is less cognitive reconstruction around an important decision. The [Decision Lifecycle](DECISION_LIFECYCLE.md) defines the surrounding evidence-to-decision-to-outcome path.
+
+## Bottom line first
+
+When the governed basis supports a clear disposition or next move, state it before the supporting detail. If the evidence does not support commitment, state that constraint first instead. The first view should make the current supportable action unmistakable without converting the prepared assessment into accountable human authority.
 
 ## Core surface
 

@@ -50,6 +50,7 @@ jobs:
               Path("LICENSE"),
               Path("docs/EXECUTION_AUTHORITY.md"),
               Path("docs/FRONTIER_ASSURANCE_ARCHITECTURE.md"),
+              Path("docs/DECISION_LIFECYCLE.md"),
               Path("docs/DECISION_SURFACE.md"),
           ]
           for path in required:
@@ -66,6 +67,7 @@ jobs:
           readme = Path("README.md").read_text(encoding="utf-8")
           for target in (
               "docs/FRONTIER_ASSURANCE_ARCHITECTURE.md",
+              "docs/DECISION_LIFECYCLE.md",
               "docs/EXECUTION_AUTHORITY.md",
               "docs/DECISION_SURFACE.md",
           ):
@@ -95,8 +97,22 @@ jobs:
           assert "must never be inferred from lower states" in authority
           assert "Repository work does **not** imply authorization" in authority
 
+          lifecycle = Path("docs/DECISION_LIFECYCLE.md").read_text(encoding="utf-8")
+          for phrase in (
+              "## Operating path",
+              "## Decision first",
+              "## Minimum sufficient commitment",
+              "## Targeted activation",
+              "## Authority boundary",
+              "## Outcome boundary",
+              "## Interoperability",
+              "## Completion standard",
+          ):
+              assert phrase in lifecycle, f"missing decision-lifecycle invariant: {phrase}"
+
           decision_surface = Path("docs/DECISION_SURFACE.md").read_text(encoding="utf-8")
           for phrase in (
+              "## Bottom line first",
               "## Core surface",
               "## Progressive disclosure",
               "## Minimum necessary human contribution",
