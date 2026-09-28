@@ -26,7 +26,23 @@ When supported by the governed record, a Decision Surface should answer:
 
 1. **Mission** — what outcome this decision serves.
 2. **Decision required** — the bounded choice or disposition.
-3. **Why this reached you** — why this person owns or must review it.
+3. **Decision criteria / priority tradeoffs** — the criteria that materially distinguish the options, while keeping evidence-backed consequences separate from owner-set priorities, thresholds, policy constraints, and value judgments.
+4. **Why this reached you**
+5. **Why now**
+6. **What changed**
+7. **Mission / capital / schedule effect**
+8. **Prepared next move**
+9. **Strongest countercase**
+10. **Alternatives**
+11. **Evidence posture**
+12. **Critical unknowns**
+13. **Minimum sufficient commitment**
+14. **Cost of action / cost of waiting**
+15. **Human burden**
+16. **Stop / reopen conditions**
+17. **Owner**
+18. **Need from you**
+19. **Show why** — why this person owns or must review it.
 4. **Why now** — the change, deadline, threshold, or new evidence creating materiality.
 5. **What changed** — the delta from the previously reviewed state.
 6. **Mission / capital / schedule effect** — the material consequence, when established.
