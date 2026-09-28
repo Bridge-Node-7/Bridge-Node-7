@@ -26,24 +26,39 @@ When supported by the governed record, a Decision Surface should answer:
 
 1. **Mission** — what outcome this decision serves.
 2. **Decision required** — the bounded choice or disposition.
-3. **Why this reached you** — why this person owns or must review it.
-4. **Why now** — the change, deadline, threshold, or new evidence creating materiality.
-5. **What changed** — the delta from the previously reviewed state.
-6. **Mission / capital / schedule effect** — the material consequence, when established.
-7. **Prepared next move** — the bounded action or proof step supported by the current basis; this never replaces accountable human judgment.
-8. **Strongest countercase** — the strongest material reason not to take the prepared move.
-9. **Alternatives** — materially distinct options, including HOLD or NO ACTION when appropriate.
-10. **Evidence posture** — direct support, applicability, freshness, contradictions, and material gaps without an invented confidence score.
-11. **Critical unknowns** — unresolved facts that could change the decision.
-12. **Minimum sufficient commitment** — the smallest reversible action that can create decision-relevant information when a full commitment is not yet justified.
-13. **Cost of action / cost of waiting** — only when supported by evidence or explicit assumptions.
-14. **Human burden** — expected internal attention or coordination load when material and supportable.
-15. **Stop / reopen conditions** — what future evidence, changed dependency, or failed criterion should force reconsideration.
-16. **Owner** — the accountable human decision owner.
-17. **Need from you** — the smallest explicit human contribution required now.
-18. **Show why** — governed evidence, assumptions, lineage, calculations, limitations, and historical state behind the surface.
+3. **Decision criteria / priority tradeoffs** — the criteria that materially distinguish the options, while keeping evidence-backed consequences separate from owner-set priorities, thresholds, policy constraints, and value judgments.
+4. **Why this reached you** — why this person owns or must review it.
+5. **Why now** — the change, deadline, threshold, or new evidence creating materiality.
+6. **What changed** — the delta from the previously reviewed state.
+7. **Mission / capital / schedule effect** — the material consequence, when established.
+8. **Prepared next move** — the bounded action or proof step supported by the current basis; this never replaces accountable human judgment.
+9. **Strongest countercase** — the strongest material reason not to take the prepared move.
+10. **Alternatives** — materially distinct options, including HOLD or NO ACTION when appropriate.
+11. **Evidence posture** — direct support, applicability, freshness, contradictions, and material gaps without an invented confidence score.
+12. **Critical unknowns** — unresolved facts that could change the decision.
+13. **Minimum sufficient commitment** — the smallest reversible action that can create decision-relevant information when a full commitment is not yet justified.
+14. **Cost of action / cost of waiting** — only when supported by evidence or explicit assumptions.
+15. **Human burden** — expected internal attention or coordination load when material and supportable.
+16. **Stop / reopen conditions** — what future evidence, changed dependency, or failed criterion should force reconsideration.
+17. **Owner** — the accountable human decision owner.
+18. **Need from you** — the smallest explicit human contribution required now.
+19. **Show why** — governed evidence, assumptions, lineage, calculations, limitations, and historical state behind the surface.
 
 Unsupported fields remain absent or explicitly unknown. They are never fabricated merely to complete the layout.
+
+## Fact / value boundary
+
+Evidence can establish or constrain expected consequences. It does not, by itself, determine how an accountable human should weight competing lawful objectives, priorities, burdens, rights, or values.
+
+When a choice depends on those tradeoffs:
+
+- state the evidence-backed consequences separately from the priority or value judgment;
+- make material decision criteria visible;
+- identify owner-set thresholds, constraints, or weights as human inputs rather than empirical facts;
+- preserve material dissent and affected-party perspectives when they change the decision basis; and
+- do not manufacture a single "optimal" choice when the evidence does not uniquely determine one.
+
+The accountable human owns the priority tradeoff. Bridge Node 7 owns the discipline of making the tradeoff inspectable.
 
 ## Progressive disclosure
 

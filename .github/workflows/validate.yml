@@ -122,11 +122,13 @@ jobs:
           for phrase in (
               "## Bottom line first",
               "## Core surface",
+              "## Fact / value boundary",
               "## Progressive disclosure",
               "## Minimum necessary human contribution",
               "## Materiality and silence",
               "NO ACTION REQUIRED",
               "## Authority boundary",
+              "The accountable human owns the priority tradeoff.",
               "The human still decides.",
           ):
               assert phrase in decision_surface, f"missing decision-surface invariant: {phrase}"
