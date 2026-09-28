@@ -100,6 +100,7 @@ jobs:
           lifecycle = Path("docs/DECISION_LIFECYCLE.md").read_text(encoding="utf-8")
           for phrase in (
               "## Operating path",
+              "## Operational use",
               "## Decision first",
               "## Minimum sufficient commitment",
               "## Targeted activation",
@@ -109,6 +110,13 @@ jobs:
               "## Completion standard",
           ):
               assert phrase in lifecycle, f"missing decision-lifecycle invariant: {phrase}"
+
+          for phrase in (
+              "case-specific non-public evidence",
+              "review-required Decision candidate",
+              "Internal use is not a lower-assurance mode.",
+          ):
+              assert phrase in lifecycle, f"missing operational-use invariant: {phrase}"
 
           decision_surface = Path("docs/DECISION_SURFACE.md").read_text(encoding="utf-8")
           for phrase in (
