@@ -113,6 +113,21 @@ Bridge Node 7 uses bounded systems with explicit interfaces, local validation, a
 - **Human authority.** Accountable humans retain consequential judgment. Automation may accelerate preparation, validation, retrieval, and comparison.
 - **Complexity discipline.** Every persistent control should remove more recurring work, uncertainty, or risk than it introduces.
 
+## Sustainable vocabulary and naming boundary
+
+Long-lived infrastructure should be named for durable responsibility, evidence state, authority, or interface rather than for a temporary mission, customer, program, campaign, administration, event, or case.
+
+- **Core nouns should survive context changes.** Prefer durable terms such as source, claim, evidence, assumption, dependency, interface, proof request, route, decision, outcome, review, handling boundary, profile, adapter, and projection.
+- **Time-bound names stay at the edge.** Put them in case data, provenance, configuration, bounded profiles or adapters, release notes, or public evidence where accurate attribution requires them.
+- **Do not encode transient names into durable identities.** Canonical schema IDs, portable contracts, generic modules, shared workflow names, and repository names should remain reusable unless a named entity is itself the durable authority boundary.
+- **Necessary provenance may retain proper names.** Attribution does not promote a source, program, partner, mission, or case name into architecture.
+- **Domain vocabulary stays bounded.** Domain repositories and profiles may use specialized technical nouns when they encode real domain semantics; those nouns do not move into universal core semantics without repeated cross-domain evidence.
+- **Public naming follows minimum necessary disclosure.** Public surfaces expose supported capability, verification, limitations, and necessary provenance rather than private mission selection, partner targeting, strategic sequencing, or internal hypothesis structure.
+- **Use the disappearance test.** If a named program, partner, mission, or case disappeared tomorrow, the core architecture should still make sense without renaming.
+- **Use the transfer test.** If an unrelated mission cannot reuse the same interface without renaming it, the interface is probably overfit to context.
+
+This keeps high-churn context in data and bounded adapters while preserving low-churn contracts, authorities, and repository topology.
+
 ### AI, NLP, and machine-learning boundary
 
 AI, natural-language processing, and machine learning may improve sensing, retrieval, candidate extraction, synthesis, experimentation, anomaly detection, attention allocation, and calibration. Model output begins as candidate information unless a separately governed process promotes it.
