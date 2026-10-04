@@ -68,6 +68,23 @@ The current architecture includes bounded portable contracts for:
 
 Portable artifacts preserve their declared evidence and authority boundaries. Moving information between systems does not increase epistemic confidence or consequential authority.
 
+## Epistemic integrity
+
+Bridge Node 7 preserves a cross-domain distinction between what was reported, observed, measured, calculated, inferred, simulated, hypothesized, reproduced, reviewed, and decided.
+
+No interface, model, summary, graph edge, assurance record, or decision surface may silently promote information into a stronger epistemic state.
+
+The reusable method is distributed across existing authorities rather than implemented as another system:
+
+- [Frontier Signal Integrity](https://github.com/Bridge-Node-7/frontier-intelligence-workflows/tree/main/profiles/frontier-signal-integrity) protects possibility from becoming unsupported knowledge in high-ambiguity investigations.
+- [Cross-Domain Epistemic Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/EPISTEMIC_ASSURANCE.md) preserves evidence-class and authority boundaries during assurance and decision preparation.
+- Intelligence Library preserves reviewed claims, limitations, prohibited inferences, and source lineage.
+- Mission Graph preserves imported evidence state while connecting dependency and ProofRequest context.
+- FDE prepares human comparison without increasing evidence authority.
+
+A credible source may still support only a narrow claim. Repetition does not create independence. Restricted access does not establish the content of what is inaccessible. Symbolic interpretation does not become physical measurement. AI-generated hypotheses remain hypotheses until separately evidenced.
+
+
 ## Non-blocking assurance
 
 Assurance exists to accelerate trustworthy execution, not to create ceremony.
