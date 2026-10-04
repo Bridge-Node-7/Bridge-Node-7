@@ -189,7 +189,8 @@ The same assurance principles can be applied through bounded domain implementati
 - AI and cybersecurity assurance;
 - cryptographic transition;
 - orbital / mission-recovery assurance;
-- scientific discovery.
+- scientific discovery;
+- anomalous-aerospace and disclosure assurance through existing frontier-intelligence, evidence, assurance, and decision boundaries.
 
 A domain profile may add specialized records and validation. It does not redefine the core assurance semantics or human decision boundary.
 
