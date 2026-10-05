@@ -47,14 +47,6 @@ Bridge Node 7 maintains a source-conscious intelligence and engineering surface 
 
 **[Explore Materials-to-Mission →](https://github.com/Bridge-Node-7/materials-to-mission)**
 
-### Disclosure Assurance
-
-**Disclosure Assurance** applies Bridge Node 7's existing Frontier Assurance architecture to anomalous aerospace, disclosure-related, and other extreme-uncertainty claims without creating a separate truth system.
-
-The method preserves source genealogy, distinguishes testimony from observation and measurement, keeps unresolved attribution unresolved, exposes competing explanations and prohibited inferences, and identifies the next evidence that could materially change an assessment.
-
-**[Evaluate the extreme-uncertainty method →](https://github.com/Bridge-Node-7/frontier-intelligence-workflows/blob/main/profiles/frontier-signal-integrity/EXTREME_UNCERTAINTY_PATTERN.md)**
-
 ## Decision infrastructure
 
 **[Frontier Decision Engine](https://github.com/Bridge-Node-7/frontier-decision-engine)** prepares governed evidence, uncertainty, and changing conditions for accountable human decisions.
