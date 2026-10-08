@@ -7,6 +7,11 @@ on:
     paths:
       - "README.md"
       - "LICENSE"
+      - "SECURITY.md"
+      - "GOVERNANCE.md"
+      - "IP_POLICY.md"
+      - "TRADEMARKS.md"
+      - "CITATION.cff"
       - "docs/**"
       - ".github/workflows/validate.yml"
   schedule:
@@ -43,6 +48,12 @@ jobs:
           required = [
               Path("README.md"),
               Path("LICENSE"),
+              Path("SECURITY.md"),
+              Path("GOVERNANCE.md"),
+              Path("IP_POLICY.md"),
+              Path("TRADEMARKS.md"),
+              Path("CITATION.cff"),
+              Path("docs/PUBLIC_RELEASE_CHECK.md"),
               Path("docs/EXECUTION_AUTHORITY.md"),
               Path("docs/FRONTIER_ASSURANCE_ARCHITECTURE.md"),
               Path("docs/DECISION_LIFECYCLE.md"),
@@ -50,6 +61,15 @@ jobs:
           ]
           for path in required:
               assert path.is_file(), f"missing required control document: {path}"
+
+          security_text = Path("SECURITY.md").read_text(encoding="utf-8")
+          for phrase in (
+              "contact@bridgenode7.com",
+              "https://bridgenode7.com/.well-known/security.txt",
+              "Please do not open a public issue for a vulnerability.",
+              "does not create a bug-bounty program",
+          ):
+              assert phrase in security_text, f"SECURITY.md missing reporting invariant: {phrase}"
 
           license_text = Path("LICENSE").read_text(encoding="utf-8")
           for phrase in (
