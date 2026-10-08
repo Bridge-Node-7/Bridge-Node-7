@@ -27,7 +27,7 @@ If **no**, continue through ordinary engineering and release controls. If **yes 
 
 ## Rights and evidence
 
-- Preserve existing MIT, Apache, and other licenses as granted. Do not graft incompatible anti-AI exceptions onto open-source rights.
+- Preserve existing MIT, Apache, and other licenses as granted. Do not introduce repository-external restrictions that conflict with those grants.
 - Publicly served JavaScript, HTML, CSS, source maps, and assets are inspectable regardless of repository visibility. Do not ship genuine secrets, private customer context, credentials, or proprietary-only algorithms in browser assets.
 - Retain source and release identity, artifact checksums where applicable, material publication decisions, and any third-party use permissions.
 - Maintain material ownership, chain-of-title, invention, disclosure, trade-secret, and incident evidence in authorized private systems. A registry alone does not establish rights.

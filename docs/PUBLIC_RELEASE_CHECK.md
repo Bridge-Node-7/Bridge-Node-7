@@ -16,8 +16,8 @@ Will this change intentionally reveal previously private capability, material in
 
 - A green build or automated scan never determines authorship, trade-secret status, patentability, legal compliance, or public-release authority.
 - If JavaScript is delivered to a browser, treat it as publicly inspectable even if it is built from a private repository.
-- Don't add no-AI modifications to previously licensed MIT/Apache work or rewrite the license in a general governance document.
-- Flag actual accidental development residue and confidential leaks; legitimate AI/security engineering vocabulary is not suspicious.
+- Do not use general governance text to alter or contradict repository-specific licenses.
+- Flag actual accidental development residue and confidential leaks; preserve legitimate technical and security terminology.
 - Preserve production while a candidate's product release gates remain open.
 
 **Working principle:** silent normal flow, contextual human review for uncertainty, stop only proven unacceptable publication risks.
