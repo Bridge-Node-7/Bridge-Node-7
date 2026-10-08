@@ -71,6 +71,8 @@ Forks, mirrors, copied repositories, repackaged artifacts, screenshots, or deriv
 
 Reuse rights remain defined by each repository's own license and notice. When a repository provides citation metadata or tagged releases, cite the exact release or commit used.
 
+[Governance](GOVERNANCE.md) · [IP and publication boundaries](IP_POLICY.md) · [Brand and affiliation](TRADEMARKS.md) · [Public release check](docs/PUBLIC_RELEASE_CHECK.md)
+
 ## Supporting public work
 
 - **[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)** — evidence-first workflows for emerging-technology decisions under uncertainty.
