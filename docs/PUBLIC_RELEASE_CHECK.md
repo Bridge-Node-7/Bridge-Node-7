@@ -1,23 +1,9 @@
-# Public Release Check | Quiet by Default
+# Bridge Node 7 | Public Release Scope
 
-**Scope:** only a change that becomes accessible outside its authorized private boundary. Public GitHub commits, rendered public documentation, website files, browser-delivered scripts, downloadable artifacts, and deliberately shared outputs are all disclosures.
+Official releases identify the material intended for public access: source code, documentation, reference data, generated artifacts, or browser-delivered assets.
 
-## One question
+A published artifact should have a clear source and revision, the notices required by its applicable terms, and a defined validation scope. Release checks also address unintended disclosure of credentials, confidential information, restricted content, and third-party material.
 
-Will this change intentionally reveal previously private capability, material invention, confidential or customer content, credentials, third-party material, or a material rights change?
+Passing tests, producing a build, or making a file publicly reachable does not by itself establish permission to publish it, source credibility, scientific validity, or operational readiness.
 
-- **No:** normal CI, code review, and release process. No extra IP ceremony.
-- **Yes or uncertain:** hold only the affected public disclosure. Identify the material, relevant rights/permissions, owner, intended destination, and necessary approval before publishing.
-- **Confirmed credential or restricted/customer-data exposure:** stop publication and use the appropriate security/incident process.
-
-**Only record an exception receipt when a boundary is triggered.** A sufficient record identifies the asset/revision, classification, decision owner, supporting rights evidence, approved public artifact, and conditions for reassessment.
-
-## Preserve engineering and evidence boundaries
-
-- A green build or automated scan never determines authorship, trade-secret status, patentability, legal compliance, or public-release authority.
-- If JavaScript is delivered to a browser, treat it as publicly inspectable even if it is built from a private repository.
-- Do not use general governance text to alter or contradict repository-specific licenses.
-- Flag actual accidental development residue and confidential leaks; preserve legitimate technical and security terminology.
-- Preserve production while a candidate's product release gates remain open.
-
-**Working principle:** silent normal flow, contextual human review for uncertainty, stop only proven unacceptable publication risks.
+Each project retains its own release and rights requirements. See the public [IP and publication boundaries](../IP_POLICY.md) and the repository-specific license.
