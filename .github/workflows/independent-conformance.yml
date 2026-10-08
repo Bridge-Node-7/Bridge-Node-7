@@ -1,0 +1,149 @@
+name: Independent external-finding conformance
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/independent-conformance.yml"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/independent-conformance.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "independent-conformance-${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+# This is a deliberately bounded, on-demand estate acceptance test.
+# Exact reviewed producer/consumer SHAs must be updated when the interface changes.
+# It never pushes to either checkout, imports real cases, or authorizes decisions.
+jobs:
+  m2m-fma-current-consumer:
+    name: M2M -> FMA current consumer and negative-boundary replay
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout pinned M2M
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: Bridge-Node-7/materials-to-mission
+          ref: 63867a6f4563585e989fee8bc0174eb6ad5df182
+          path: producer
+          persist-credentials: false
+      - name: Checkout pinned FMA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: Bridge-Node-7/frontier-mission-assurance
+          ref: f0a4ebb00d6c0a4d713f724c2a461de975c03d98
+          path: consumer
+          persist-credentials: false
+      - name: Setup Python 3.12
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+      - name: Independently verify producer -> installed consumer
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check ./producer ./consumer
+          cmp producer/contracts/fma/assurance-graph.schema.json consumer/schemas/assurance-graph.schema.json
+          cmp producer/contracts/fma/decision-receipt.schema.json consumer/schemas/decision-receipt.schema.json
+          python producer/scripts/export_fma_projection.py producer/examples/synthetic-critical-material-pathway/case.json --output-dir "$RUNNER_TEMP/projection"
+          fma validate "$RUNNER_TEMP/projection/assurance-graph.json"
+          fma decision "$RUNNER_TEMP/projection/assurance-graph.json" "$RUNNER_TEMP/projection/decision-receipt.json"
+          fma coverage "$RUNNER_TEMP/projection/assurance-graph.json" > "$RUNNER_TEMP/coverage.json"
+          python - "$RUNNER_TEMP/projection" <<'PY'
+          import hashlib, json, pathlib, sys
+          root=pathlib.Path(sys.argv[1])
+          g=json.loads((root/"assurance-graph.json").read_text())
+          d=json.loads((root/"decision-receipt.json").read_text())
+          m=json.loads((root/"projection-manifest.json").read_text())
+          assert d["decision"]["disposition"]=="HOLD", "synthetic nonapproval must survive"
+          assert m["projection_is_lossy"] is True
+          assert m["source"]["validation_profile"]=="m0-strict-0.4.0"
+          assert m["source"]["toolkit_version"]
+          for name in ("assurance-graph.json","decision-receipt.json"):
+              assert m["artifacts"][name]==hashlib.sha256((root/name).read_bytes()).hexdigest()
+          assert "nodes" in g and "edges" in g
+          print("PASS current M2M producer -> current FMA consumer; hashes, HOLD, and profile preserved")
+          PY
+          for source in producer/examples/invalid/*.json; do
+            rm -rf "$RUNNER_TEMP/rejected"
+            if python producer/scripts/export_fma_projection.py "$source" --output-dir "$RUNNER_TEMP/rejected"; then
+              echo "SAFE STOP: rejected case was accepted: $source"
+              exit 1
+            fi
+            test ! -e "$RUNNER_TEMP/rejected" || { echo "SAFE STOP: invalid case wrote artifacts"; exit 1; }
+          done
+          python - "$RUNNER_TEMP/projection" "$RUNNER_TEMP" <<'PY'
+          import json,pathlib,sys
+          good=pathlib.Path(sys.argv[1]);root=pathlib.Path(sys.argv[2])
+          graph=json.loads((good/"assurance-graph.json").read_text())
+          graph["nodes"][0]["criticality"]=None
+          (root/"null-criticality.json").write_text(json.dumps(graph))
+          PY
+          if fma validate "$RUNNER_TEMP/null-criticality.json"; then
+            echo "SAFE STOP: explicit null criticality passed FMA"; exit 1
+          fi
+          python - "$RUNNER_TEMP/projection" "$RUNNER_TEMP" <<'PY'
+          import json,pathlib,sys
+          good=pathlib.Path(sys.argv[1]);root=pathlib.Path(sys.argv[2])
+          graph=json.loads((good/"assurance-graph.json").read_text())
+          graph["nodes"][0].pop("criticality",None)
+          (root/"omitted-criticality.json").write_text(json.dumps(graph))
+          PY
+          fma validate "$RUNNER_TEMP/omitted-criticality.json"
+          echo "PASS cross-repository consumer and invalid-input replay"
+
+  fiw-macos-alias:
+    name: FIW macOS real /var -> /private/var replay
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout pinned FIW
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: Bridge-Node-7/frontier-intelligence-workflows
+          ref: c3540249d7b1c3e0c790a2615ebfb3564b4b5f0b
+          path: fiw
+          persist-credentials: false
+      - name: Setup Python 3.12
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+      - name: Run real macOS alias, native tests and sealed validator
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check -r fiw/requirements-validation.txt
+          ALIAS_ROOT="$(mktemp -d /var/tmp/bn7-fiw-alias.XXXXXX)"
+          trap 'rm -rf "$ALIAS_ROOT"' EXIT
+          cp -R fiw "$ALIAS_ROOT/repo"
+          export ALIAS_ROOT
+          python3 - <<'PY'
+          import os, pathlib
+          alias=pathlib.Path(os.environ["ALIAS_ROOT"])
+          canonical=alias.resolve()
+          assert str(alias).startswith("/var/tmp/")
+          assert str(canonical).startswith("/private/var/tmp/"), (alias,canonical)
+          assert canonical.exists()
+          print("macOS path alias:",alias,"->",canonical)
+          PY
+          python3 "$ALIAS_ROOT/repo/scripts/run_tests.py" --root "$ALIAS_ROOT/repo" --json-output "$RUNNER_TEMP/source-tests.json"
+          python3 "$ALIAS_ROOT/repo/scripts/compile_sources.py" --root "$ALIAS_ROOT/repo"
+          python3 "$ALIAS_ROOT/repo/scripts/validate_repo.py" --root "$ALIAS_ROOT/repo" --json-output "$RUNNER_TEMP/alias-report.json"
+          python3 "$ALIAS_ROOT/repo/scripts/validate_repo.py" --root "/private$ALIAS_ROOT/repo" --json-output "$RUNNER_TEMP/canonical-report.json"
+          python3 - "$RUNNER_TEMP/alias-report.json" "$RUNNER_TEMP/canonical-report.json" <<'PY'
+          import json,sys
+          a,b=(json.load(open(p,encoding="utf-8")) for p in sys.argv[1:])
+          assert a["passed"] and b["passed"], (a["summary"],b["summary"])
+          assert a==b, "macOS alias changed validator output: examine changed scope"
+          assert a["summary"]["total"]>=20
+          print("PASS macOS /var and /private/var reports identical; all policy checks retained")
+          PY
+          git -C "$ALIAS_ROOT/repo" diff --check
+          test -z "$(git -C "$ALIAS_ROOT/repo" status --porcelain)"
+          echo "PASS FIW macOS original failure path and clean-tree gate"
