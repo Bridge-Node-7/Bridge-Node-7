@@ -34,7 +34,7 @@ A method and toolkit for tracing selected materials and components through sourc
 
 ### [Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)
 
-Source-linked workflows for checking where technical claims came from, distinguishing reports from independent evidence, and documenting unresolved questions.
+Source-linked workflows for tracing technical claims to their origins, surfacing shared-source reporting, and documenting unresolved questions.
 
 ### [Frontier Decision Engine](https://github.com/Bridge-Node-7/frontier-decision-engine)
 
