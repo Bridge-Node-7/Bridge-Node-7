@@ -6,7 +6,7 @@
 
 Breakthrough technologies bring together research, hardware, software, materials, and people.
 
-Bridge Node 7 develops software and engineering methods that help teams connect technical evidence, system requirements, materials, and supplier information. Our focus is clearer decisions, efficient use of resources, and keeping ambitious projects moving forward.
+Bridge Node 7 develops software and engineering methods that connect technical evidence, system requirements, materials, and supplier information. We help teams make informed decisions, use resources efficiently, and keep ambitious projects moving forward.
 
 [Explore Solutions](#solutions) · [Innovation Partnerships](https://bridgenode7.com/partner/)
 
@@ -14,23 +14,23 @@ Bridge Node 7 develops software and engineering methods that help teams connect 
 
 ### [Frontier Mission Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance)
 
-Engineering assurance software that keeps technical evidence, assumptions, and system requirements connected to the decisions they support. A synthetic fault-tolerant quantum-computing example demonstrates how changes may affect earlier estimates and reviews.
+Engineering assurance software that links technical evidence, assumptions, and system requirements to the decisions they support. A synthetic fault-tolerant quantum-computing example demonstrates how changes may affect earlier estimates and reviews.
 
 [FMA evaluation guide](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FIVE_MINUTE_EVALUATION.md) · [FTQC change-impact example](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FTQC_GOLDEN_PATH.md) · [Existing-work adoption](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/EXTERNAL_RESEARCH_ADOPTION.md)
 
 ### [Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission)
 
-Methods and tools for tracing selected materials, components, and supplier information through engineering requirements and supporting evidence. Explore supply concerns, alternatives, and qualification questions to inform technical decisions.
+Methods and tools that connect selected materials and components to engineering requirements, supplier information, and supporting evidence. Designed to help teams investigate supply concerns, evaluate alternatives, and identify qualification gaps.
 
 [Explore the Materials-to-Mission Atlas](https://bridgenode7.com/materials-to-mission/) · [Evaluation guide](https://github.com/Bridge-Node-7/materials-to-mission/blob/main/docs/FIVE_MINUTE_EVALUATION.md)
 
 ### [Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)
 
-Source-linked research workflows for tracing technical claims to their origins, identifying shared-source reporting, and documenting unresolved questions.
+Source-linked research workflows that trace technical claims to their origins, identify when reports rely on the same source, and document unanswered questions.
 
 ### [Frontier Decision Engine](https://github.com/Bridge-Node-7/frontier-decision-engine)
 
-A browser-based decision-support application that turns supplied context into a Decision Brief, with optional deterministic comparison of alternatives. The public application is intended for public or sanitized information.
+A browser-based decision-support application that organizes supplied information into a Decision Brief, with optional repeatable comparison of alternatives. The public application is intended for public or sanitized information.
 
 [Open the application](https://bridgenode7.com/frontier-decision-engine/)
 
