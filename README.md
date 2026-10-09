@@ -4,51 +4,43 @@
 
 *Frontier Intelligence · Systems Engineering · Mission Assurance*
 
-**Building frontier systems takes more than one discipline.** Research, hardware, software, controls, materials, suppliers, and people must work together. When an assumption or subsystem changes, the effects on interfaces, estimates, evidence, and prior reviews should be visible.
+Breakthrough technologies bring together research, hardware, software, materials, and people.
 
-Bridge Node 7 develops **evidence-linked software and methods** that help technical teams see what is supported, what a system depends on, and what deserves another look before a consequential decision.
+Bridge Node 7 develops software and engineering methods that help teams connect technical evidence, system requirements, materials, and supplier information. Our focus is clearer decisions, efficient use of resources, and keeping ambitious projects moving forward.
 
-**Evidence → Engineering dependencies → Reviewable decisions → Targeted reassessment**
-
-[Explore Solutions](#solutions) · [Five-minute FMA evaluation](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FIVE_MINUTE_EVALUATION.md) · [Innovation Partnerships](https://bridgenode7.com/partner/)
-
-## What We Connect
-
-- **Frontier Intelligence:** Trace scientific and industrial claims to sources, distinguish evidence from inference, and keep contradictions and unknowns visible.
-- **Systems Engineering:** Connect selected requirements, subsystem interfaces, components, materials, and supplier dependencies to their engineering context.
-- **Mission Assurance:** Link assumptions, evidence, expert reviews, and technical decisions so material changes can trigger focused reassessment.
+[Explore Solutions](#solutions) · [Innovation Partnerships](https://bridgenode7.com/partner/)
 
 ## Solutions
 
 ### [Frontier Mission Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance)
 
-Local-first reference software for connecting engineering assumptions, evidence, dependencies, and expert reviews to a reviewable decision basis. A **synthetic fault-tolerant quantum-computing case** shows how a changed assumption affects estimates and previous reviews.
+Engineering assurance software that keeps technical evidence, assumptions, and system requirements connected to the decisions they support. A synthetic fault-tolerant quantum-computing example demonstrates how changes may affect earlier estimates and reviews.
 
-[Evaluate FMA](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FIVE_MINUTE_EVALUATION.md) · [Explore the FTQC change-impact example](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FTQC_GOLDEN_PATH.md) · [Apply to existing work](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/EXTERNAL_RESEARCH_ADOPTION.md)
+[FMA evaluation guide](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FIVE_MINUTE_EVALUATION.md) · [FTQC change-impact example](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FTQC_GOLDEN_PATH.md) · [Existing-work adoption](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/EXTERNAL_RESEARCH_ADOPTION.md)
 
 ### [Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission)
 
-A method and toolkit for tracing selected materials and components through source evidence, engineering requirements, suppliers, qualification gaps, and decision context.
+Methods and tools for tracing selected materials, components, and supplier information through engineering requirements and supporting evidence. Explore supply concerns, alternatives, and qualification questions to inform technical decisions.
 
-[Evaluate Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission/blob/main/docs/FIVE_MINUTE_EVALUATION.md)
+[Explore the Materials-to-Mission Atlas](https://bridgenode7.com/materials-to-mission/) · [Evaluation guide](https://github.com/Bridge-Node-7/materials-to-mission/blob/main/docs/FIVE_MINUTE_EVALUATION.md)
 
 ### [Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)
 
-Source-linked workflows for tracing technical claims to their origins, surfacing shared-source reporting, and documenting unresolved questions.
+Source-linked research workflows for tracing technical claims to their origins, identifying shared-source reporting, and documenting unresolved questions.
 
 ### [Frontier Decision Engine](https://github.com/Bridge-Node-7/frontier-decision-engine)
 
-A browser-local workspace that turns supplied context into a Decision Brief, with optional deterministic comparison of alternatives. The public application is for public or sanitized information.
+A browser-based decision-support application that turns supplied context into a Decision Brief, with optional deterministic comparison of alternatives. The public application is intended for public or sanitized information.
 
 [Open the application](https://bridgenode7.com/frontier-decision-engine/)
 
 ## Frontier Technologies
 
-Selected public work covers [neutral-atom fault-tolerant quantum computing](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FTQC_GOLDEN_PATH.md), [critical materials](https://github.com/Bridge-Node-7/materials-to-mission), [AI Cyber Assurance](https://github.com/Bridge-Node-7/ai-cyber-assurance), [Quantum Readiness for Space Communications](https://github.com/Bridge-Node-7/quantum-readiness-space-communications), and [Pax Silica Intelligence](https://github.com/Bridge-Node-7/pax-silica).
+Selected public work includes [Fault-Tolerant Quantum Computing Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/profiles/ftqc-assurance/README.md), [critical materials](https://github.com/Bridge-Node-7/materials-to-mission), [AI Cyber Assurance](https://github.com/Bridge-Node-7/ai-cyber-assurance), [Quantum Readiness for Space Communications](https://github.com/Bridge-Node-7/quantum-readiness-space-communications), and [Pax Silica Intelligence](https://github.com/Bridge-Node-7/pax-silica).
 
 ## Innovation Partnerships
 
-Bring a specific technical system, dependency, or decision question. Start with a non-confidential introduction; potential pilots and collaborations are scoped to the evidence and engineering work actually needed.
+Bring a specific engineering challenge, research question, or development objective. We welcome focused technical collaborations and mission pilots, starting with a non-confidential introduction.
 
 [Innovation Partnerships](https://bridgenode7.com/partner/) · [contact@bridgenode7.com](mailto:contact@bridgenode7.com)
 
