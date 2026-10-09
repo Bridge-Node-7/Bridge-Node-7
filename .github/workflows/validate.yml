@@ -80,23 +80,29 @@ jobs:
               assert phrase in license_text, f"LICENSE missing rights invariant: {phrase}"
 
           readme = Path("README.md").read_text(encoding="utf-8")
+          # All control documents above must still exist. The public profile
+          # links to the architecture and stewardship entry points without
+          # repeating the full internal control-document index.
           for target in (
               "docs/FRONTIER_ASSURANCE_ARCHITECTURE.md",
-              "docs/DECISION_LIFECYCLE.md",
-              "docs/EXECUTION_AUTHORITY.md",
-              "docs/DECISION_SURFACE.md",
+              "GOVERNANCE.md",
+              "IP_POLICY.md",
+              "TRADEMARKS.md",
           ):
-              assert target in readme, f"README missing control-surface link: {target}"
+              assert target in readme, f"README missing public stewardship link: {target}"
+          assert "[Explore Solutions](#solutions)" in readme
+          assert "## Solutions" in readme
 
 
           for phrase in (
-              "## Canonical source and attribution",
+              "## Sources & Stewardship",
               "https://github.com/Bridge-Node-7",
               "https://bridgenode7.com/",
-              "not authoritative Bridge Node 7 releases",
-              "Reuse rights remain defined by each repository's own license and notice.",
+              "Independent copies are not official releases unless linked from these sources.",
+              "Each repository's license and notices define reuse rights.",
+              "scientific validation, hardware qualification, and operational readiness require separate evidence.",
           ):
-              assert phrase in readme, f"README missing canonical-source invariant: {phrase}"
+              assert phrase in readme, f"README missing publication-boundary invariant: {phrase}"
 
           authority = Path("docs/EXECUTION_AUTHORITY.md").read_text(encoding="utf-8")
           for state in (
