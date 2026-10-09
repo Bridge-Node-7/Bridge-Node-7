@@ -1,101 +1,63 @@
 # Bridge Node 7
 
-## Evidence to trusted capability.
+## Accelerating Innovation
 
-Bridge Node 7 builds **Frontier Assurance Infrastructure**: evidence-to-decision infrastructure for frontier systems.
+*Frontier Intelligence · Systems Engineering · Mission Assurance*
 
-The repositories below are selected reference implementations designed for direct evaluation, inspection, and, where each repository’s license allows, reuse within their stated scope.
+Frontier technology brings research, hardware, software, materials, and people together. Bridge Node 7 develops software and methods that connect technical evidence, engineering dependencies, and decisions across complex systems.
 
-We help technical teams preserve clarity as programs evolve: **what is known, what remains assumed, what changed, what evidence still applies, and what an accountable human can justify now.**
+[Explore Solutions](#solutions) · [Innovation Partnerships](https://bridgenode7.com/partner/)
 
-**Clarity under uncertainty. Integrity of evidence. Trusted capability. Accountable decisions.**
+## Frontier Intelligence
 
-## The operating arc
+Source-linked research on emerging technologies, scientific developments, and industrial capabilities. Public workflows organize technical claims, evidence, and relationships among original sources.
 
-**Frontier Intelligence → Engineering Evidence → Mission Assurance → Accountable Decision → Reassessment**
+## Systems Engineering
 
-**[See the Frontier Assurance architecture →](docs/FRONTIER_ASSURANCE_ARCHITECTURE.md)** · **[Decision lifecycle →](docs/DECISION_LIFECYCLE.md)** · **[Decision Surface →](docs/DECISION_SURFACE.md)** · **[Execution authority →](docs/EXECUTION_AUTHORITY.md)**
+Complex systems depend on connected components, requirements, interfaces, materials, and suppliers. Published methods trace selected dependencies from source evidence through engineering requirements and mission context.
 
-Frontier Intelligence establishes what is happening and what remains uncertain. Engineering evidence makes consequential assumptions and results inspectable. Mission Assurance preserves the reviewable decision basis as systems change. Decision infrastructure carries governed context forward without replacing expert judgment or human authority.
+## Mission Assurance
 
-## Frontier Mission Assurance
+Technical decisions draw on assumptions, estimates, evidence, and expert review. Frontier Mission Assurance connects those records and identifies affected estimates and reviews when an important assumption changes.
 
-**[Frontier Mission Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance)** is the flagship assurance layer for consequential technical decisions.
+## Solutions
 
-It is designed to answer four questions:
+### [Frontier Mission Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance)
 
-- **What is supported?**
-- **What is still assumed?**
-- **What changed?**
-- **What must be reconsidered?**
+Local-first reference software for connecting engineering assumptions, evidence, dependencies, and expert reviews to technical decisions. A synthetic fault-tolerant quantum-computing example demonstrates change-impact tracing.
 
-FMA connects claims, assumptions, experiments, evidence, expert review, dependencies, and decisions while keeping authoritative source systems authoritative.
+[FMA evaluation guide](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FIVE_MINUTE_EVALUATION.md) · [FTQC change-impact example](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FTQC_GOLDEN_PATH.md) · [Existing-work adoption](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/EXTERNAL_RESEARCH_ADOPTION.md)
 
-**[Evaluate Frontier Mission Assurance →](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FIVE_MINUTE_EVALUATION.md)** · **[Follow the FTQC golden path →](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FTQC_GOLDEN_PATH.md)**
+### [Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission)
 
-## Frontier engineering
+A method and toolkit for tracing selected materials and components through source evidence, requirements, supplier dependencies, and qualification status.
 
-### Neutral-Atom Fault-Tolerant Quantum Computing
+[Materials-to-Mission evaluation guide](https://github.com/Bridge-Node-7/materials-to-mission/blob/main/docs/FIVE_MINUTE_EVALUATION.md)
 
-Bridge Node 7 maintains a source-conscious intelligence and engineering surface for neutral-atom FTQC across architecture, quantum error correction, control, photonics, system performance, and verification.
+### [Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)
 
-**[Explore Neutral-Atom FTQC →](https://bridgenode7.com/neutral-atom-ftqc/)**
+Source-linked workflows for reviewing emerging-technology claims, comparing their origins, and recording supporting evidence and open questions.
 
-### Materials-to-Mission
+### [Frontier Decision Engine](https://github.com/Bridge-Node-7/frontier-decision-engine)
 
-**[Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission)** connects source evidence, materials, components, systems, mission consequence, qualification state, and accountable decisions.
+A browser-local workspace for preparing a Decision Brief from supplied context, with an optional comparison of alternatives. The public application is intended for public or sanitized information.
 
-**[Explore Materials-to-Mission →](https://github.com/Bridge-Node-7/materials-to-mission)**
+[Open the application](https://bridgenode7.com/frontier-decision-engine/)
 
-## Decision infrastructure
+## Frontier Technologies
 
-**[Frontier Decision Engine](https://github.com/Bridge-Node-7/frontier-decision-engine)** prepares governed evidence, uncertainty, and changing conditions for accountable human decisions.
+Public research and engineering references include [neutral-atom fault-tolerant quantum computing](https://bridgenode7.com/neutral-atom-ftqc/), [Pax Silica Intelligence](https://github.com/Bridge-Node-7/pax-silica), [AI Cyber Assurance](https://github.com/Bridge-Node-7/ai-cyber-assurance), and [Quantum Readiness for Space Communications](https://github.com/Bridge-Node-7/quantum-readiness-space-communications).
 
-The comparison informs. **A person decides.**
+## Innovation Partnerships
 
-## Public References
+Technical collaboration, mission pilots, research programs, and strategic opportunities begin with a non-confidential introduction about the technology, system, or engineering question.
 
-This GitHub provides selected reference implementations, portable contracts,
-synthetic examples, public-source evidence, validation tooling, and release
-proof.
+[Innovation Partnerships](https://bridgenode7.com/partner/) · [contact@bridgenode7.com](mailto:contact@bridgenode7.com)
 
-Each published repository is independently inspectable within its declared
-scope. Its documentation states what a machine result means, what it does not
-establish, and where human judgment remains required.
+## Sources & Stewardship
 
-## Canonical source and attribution
+Public repositories contain selected software, methods, research references, and synthetic examples. Automated checks demonstrate stated software behavior; scientific validation, hardware qualification, and operational readiness require separate evidence.
 
-The canonical public source for Bridge Node 7 software, documentation, and release references is **[github.com/Bridge-Node-7](https://github.com/Bridge-Node-7)** together with **[BridgeNode7.com](https://bridgenode7.com/)**.
+Official sources: [Bridge Node 7 on GitHub](https://github.com/Bridge-Node-7) · [BridgeNode7.com](https://bridgenode7.com/). Each repository's license and notices define reuse rights. Independent copies are not official releases unless linked from these sources.
 
-Forks, mirrors, copied repositories, repackaged artifacts, screenshots, or derivative distributions are not authoritative Bridge Node 7 releases unless they are explicitly linked from one of those canonical surfaces.
-
-Reuse rights remain defined by each repository's own license and notice. When a repository provides citation metadata or tagged releases, cite the exact release or commit used.
-
-[Governance](GOVERNANCE.md) · [IP and publication boundaries](IP_POLICY.md) · [Brand and affiliation](TRADEMARKS.md) · [Public release check](docs/PUBLIC_RELEASE_CHECK.md)
-
-## Supporting public work
-
-- **[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows)** — evidence-first workflows for emerging-technology decisions under uncertainty.
-- **[Pax Silica Intelligence](https://github.com/Bridge-Node-7/pax-silica)** — reviewed public-source intelligence on strategic technology and industrial capability.
-- **[AI Cyber Assurance](https://github.com/Bridge-Node-7/ai-cyber-assurance)** — human-governed assurance cases for bounded AI and cybersecurity decisions.
-- **[Quantum Readiness for Space Communications](https://github.com/Bridge-Node-7/quantum-readiness-space-communications)** — evidence-first methodology for cryptographic transition and mission-readiness decisions.
-
-## Collaborate
-
-Bridge Node 7 works selectively with frontier engineering teams, research organizations, mission programs, and strategic institutions where stronger evidence architecture can materially improve a consequential technical decision.
-
-A useful collaboration often begins with one question:
-
-> **What must be true for this capability to be trusted — and what evidence would change the decision?**
-
-**Technical evaluation · Research collaboration · Mission assurance · Strategic partnership · Institutional conversations**
-
-**[Partner with Bridge Node 7 →](https://bridgenode7.com/partner/)**
-
-[BridgeNode7.com](https://bridgenode7.com/) · [contact@bridgenode7.com](mailto:contact@bridgenode7.com)
-
----
-
-**Bridge Node 7 · Evidence to trusted capability.**
-
-Licensing and reuse rights are defined by each repository's own license and documentation.
+[Architecture](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/docs/FRONTIER_ASSURANCE_ARCHITECTURE.md) · [Governance](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/GOVERNANCE.md) · [IP and publication](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/IP_POLICY.md) · [Names and affiliation](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/TRADEMARKS.md)
