@@ -71,3 +71,9 @@ That provides a durable control without publishing a private denylist.
 Public allowlist, not private denylist.  
 Minimum necessary disclosure.  
 Independent release authority.**
+
+## Candidate-stage prevention
+
+The profile pull-request workflow scans its current checkout before merge. The bounded read-only public-estate audit examines open public pull-request heads as well as default branches without executing candidate code or reading private repositories. Exceeding the bounded review set or failing to retrieve sources stops the audit. This supplements, but does not replace, each repository's native checks, branch protection, and separate human release authority.
+
+CI prints findings by category, not original matched values or paths. Legitimate legal authorship, licenses, scholarly attribution, and necessary organizational contacts require rights-aware review; indiscriminate name removal would damage provenance. A clean scan is not a guarantee that every historic or future disclosure has been detected.
