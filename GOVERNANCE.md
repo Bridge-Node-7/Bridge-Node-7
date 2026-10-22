@@ -8,6 +8,22 @@ Each repository identifies its own purpose, license, interfaces, and validation 
 
 A reference implementation may support an accountable person's judgment without replacing it. Related repositories retain their own authoritative records and versioned contracts.
 
+
+## Corrective-action classification
+
+Audit findings are classified before mutation so automation can generalize real defects without silently overriding reviewed decisions.
+
+- **DEFECT** — current behavior violates an established requirement. Correct the defect and search for equivalent instances.
+- **DECISION CHALLENGE** — a reviewer disputes a deliberate choice. Preserve the current decision unless new evidence justifies reopening it.
+- **EVIDENCE GAP** — the current claim or state is not sufficiently established. Verify before changing conclusions.
+- **EXTERNAL DEPENDENCY** — closure requires legal, customer, human, platform, or other outside authority. Track the dependency without manufacturing completion.
+
+For a real defect, record the deepest closure actually achieved:
+
+`INSTANCE → PATTERN → ROOT CAUSE → CONTROL → EVIDENCE → REASSESSMENT`
+
+A named instance being fixed is not evidence that the defect class is closed. Conversely, a recommendation is not a defect merely because it proposes a different design. Controls should remove more work than they create.
+
 ## Publication and stewardship
 
 Published materials are identified by their source, revision, and applicable rights. New releases are assessed for their intended public scope, dependencies, and the evidence required by their own release process. A successful build alone is not a claim of broader authorization or readiness.
