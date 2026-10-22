@@ -189,6 +189,9 @@ jobs:
           print("PASS control-surface validation")
           PY
 
+      - name: Screen candidate repository before publication
+        run: python3 scripts/check_public_transfer_boundary.py --root . --label candidate
+
       - name: Check PR title metadata
         if: github.event_name == 'pull_request'
         env:
@@ -289,4 +292,21 @@ jobs:
               --label "${repo}"
           done
 
+          # Audit bounded public PR heads without executing candidate code.
+          for repo in "${expected_public_repos[@]}"; do
+            pr_data="$(curl --fail --silent --show-error --location -H "Accept: application/vnd.github+json" "https://api.github.com/repos/Bridge-Node-7/${repo}/pulls?state=open&per_page=31")"
+            pr_count="$(jq -r 'length' <<<"$pr_data")"
+            if (( pr_count > 30 )); then
+              echo "SAFE STOP: candidate audit exceeded review bound"
+              exit 1
+            fi
+            mapfile -t pr_numbers < <(jq -r '.[].number | select(type == "number")' <<<"$pr_data")
+            for pr_number in "${pr_numbers[@]}"; do
+              candidate="${audit_root}/candidate-${repo}-${pr_number}"
+              git -C "${audit_root}/${repo}" fetch --quiet --no-tags --depth 1 origin "refs/pull/${pr_number}/head"
+              git -C "${audit_root}/${repo}" worktree add --quiet --detach "$candidate" FETCH_HEAD
+              python3 scripts/check_public_transfer_boundary.py --root "$candidate" --label "candidate-${repo}-${pr_number}"
+              git -C "${audit_root}/${repo}" worktree remove --force "$candidate"
+            done
+          done
           echo "PASS public estate private-context boundary"
