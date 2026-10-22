@@ -24,11 +24,14 @@ PUBLIC_REPOS = frozenset({
 
 ORG_LINK = re.compile(r"https://github\.com/Bridge-Node-7/([A-Za-z0-9_.-]+)")
 RAW_LINK = re.compile(r"https://raw\.githubusercontent\.com/Bridge-Node-7/([A-Za-z0-9_.-]+)")
+API_LINK = re.compile(r"https://api\.github\.com/repos/Bridge-Node-7/([A-Za-z0-9_.-]+)")
 PRIVATE_CONTEXT_PATTERNS = {
     "SANDBOX_PATH": re.compile(r"sandbox:/mnt/data/", re.I),
     "MNT_DATA_PATH": re.compile(r"(?<![A-Za-z0-9_])/mnt/data/", re.I),
     "CHATGPT_CONVERSATION": re.compile(r"https://chatgpt\.com/c/", re.I),
     "CHATGPT_PROJECT": re.compile(r"https://chatgpt\.com/g/g-p-", re.I),
+    "CHATGPT_SHARED": re.compile(r"https://(?:chatgpt\.com|chat\.openai\.com)/share/", re.I),
+    "CHATGPT_LEGACY_CONVERSATION": re.compile(r"https://chat\.openai\.com/(?:c/|g/)", re.I),
     "CONNECTOR_FILE_REF": re.compile(r"\bturn\d+file\d+\b", re.I),
     "INTERNAL_FILE_ID": re.compile(r"\bfile_[0-9a-f]{20,}\b", re.I),
 }
@@ -68,6 +71,9 @@ def scan(root: Path) -> list[str]:
         for match in RAW_LINK.finditer(text):
             if match.group(1) not in PUBLIC_REPOS:
                 findings.append(f"NONPUBLIC_OR_UNKNOWN_RAW_LOCATOR:{rel}")
+        for match in API_LINK.finditer(text):
+            if match.group(1) not in PUBLIC_REPOS:
+                findings.append(f"NONPUBLIC_OR_UNKNOWN_API_LOCATOR:{rel}")
         for code, pattern in PRIVATE_CONTEXT_PATTERNS.items():
             if pattern.search(text):
                 findings.append(f"{code}:{rel}")
@@ -87,13 +93,19 @@ def self_test() -> None:
         (root / "bad.md").write_text(
             "https://github.com/Bridge-Node-7/not-in-public-estate\n"
             "sandbox:/mnt/data/example.txt\n"
-            "https://chatgpt.com/c/example\n",
+            "https://chatgpt.com/c/example\n"
+            "https://api.github.com/repos/Bridge-Node-7/not-in-public-estate/contents\n"
+            "https://chatgpt.com/share/example\n"
+            "https://chat.openai.com/c/example\n",
             encoding="utf-8",
         )
         findings = scan(root)
         assert any(x.startswith("NONPUBLIC_OR_UNKNOWN_GITHUB_LOCATOR") for x in findings)
         assert any(x.startswith("SANDBOX_PATH") for x in findings)
         assert any(x.startswith("CHATGPT_CONVERSATION") for x in findings)
+        assert any(x.startswith("NONPUBLIC_OR_UNKNOWN_API_LOCATOR") for x in findings)
+        assert any(x.startswith("CHATGPT_SHARED") for x in findings)
+        assert any(x.startswith("CHATGPT_LEGACY_CONVERSATION") for x in findings)
 
 
 def main() -> int:
