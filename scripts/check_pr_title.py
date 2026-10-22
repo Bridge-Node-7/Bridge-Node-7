@@ -15,11 +15,11 @@ REPOS = (
     "pax-silica", "quantum-readiness-space-communications",
 )
 UNSAFE = (
-    re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}", re.I),
-    re.compile(r"(?:https?://|www\\.)", re.I),
-    re.compile(r"(?:[A-Z]:[\\\\/](?:Users|Documents and Settings)[\\\\/]|/(?:Users|home)/[^/\\s]+)", re.I),
+    re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.I),
+    re.compile(r"(?:https?://|www\.)", re.I),
+    re.compile(r"(?:[A-Z]:[\\/](?:Users|Documents and Settings)[\\/]|/(?:Users|home)/[^/\s]+)", re.I),
     re.compile(r"(?<![0-9])[2-9][0-9]{2}[-. ]?[2-9][0-9]{2}[-. ]?[0-9]{4}(?![0-9])"),
-    re.compile(r"\\b(?:founder-led|private draft|personal account|access token)\\b", re.I),
+    re.compile(r"\b(?:founder-led|private draft|personal account|access token)\b", re.I),
 )
 
 def acceptable(value):
