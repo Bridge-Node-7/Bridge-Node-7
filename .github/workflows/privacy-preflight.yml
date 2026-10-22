@@ -1,0 +1,46 @@
+name: Privacy preflight
+
+on:
+  workflow_call:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  privacy:
+    name: Public identity boundary
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout assessed source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          path: target
+          fetch-depth: 0
+          persist-credentials: false
+          submodules: false
+          lfs: false
+
+      - name: Checkout trusted privacy policy
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: Bridge-Node-7/Bridge-Node-7
+          ref: main
+          path: policy
+          persist-credentials: false
+          submodules: false
+          lfs: false
+
+      - name: Verify policy checks
+        run: python3 policy/scripts/test_privacy_preflight.py
+
+      - name: Scan changed data without printing matches
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: python3 policy/scripts/privacy_preflight.py --root target --base "$BASE_SHA" --from-event
