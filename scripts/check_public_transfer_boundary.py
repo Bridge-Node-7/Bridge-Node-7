@@ -38,6 +38,7 @@ PUBLIC_REPOS_FOLDED = frozenset(name.casefold() for name in PUBLIC_REPOS)
 PRIVATE_CONTEXT_PATTERNS = {
     "SANDBOX_PATH": re.compile(r"sandbox:/mnt/data/", re.I),
     "MNT_DATA_PATH": re.compile(r"(?<![A-Za-z0-9_])/mnt/data/", re.I),
+    "USER_HOME_PATH": re.compile(r"(?:[A-Z]:[\\/](?:Users|Documents and Settings)[\\/][^\\/\s]+|/(?:Users|home)/[^/\s]+)", re.I),
     "CHATGPT_CONVERSATION": re.compile(r"https://chatgpt\.com/c/", re.I),
     "CHATGPT_PROJECT": re.compile(r"https://chatgpt\.com/g/g-p-", re.I),
     "CHATGPT_SHARED": re.compile(r"https://(?:chatgpt\.com|chat\.openai\.com)/share/", re.I),
@@ -106,7 +107,8 @@ def self_test() -> None:
             "sandbox:/mnt/data/example.txt\n"
             "https://chatgpt.com/c/example\n"
             "https://chatgpt.com/share/example\n"
-            "https://chat.openai.com/c/example\n",
+            "https://chat.openai.com/c/example\n"
+            "C:/Users/example-user/private-notes.txt\n",
             encoding="utf-8",
         )
         findings = scan(root)
@@ -115,6 +117,7 @@ def self_test() -> None:
         assert any(x.startswith("CHATGPT_CONVERSATION") for x in findings)
         assert any(x.startswith("CHATGPT_SHARED") for x in findings)
         assert any(x.startswith("CHATGPT_LEGACY_CONVERSATION") for x in findings)
+        assert any(x.startswith("USER_HOME_PATH") for x in findings)
 
         (root / "bad.md").write_text(
             "https://API.GITHUB.COM/repos/bridge-node-7/not-in-public-estate\n"
@@ -151,8 +154,10 @@ def main() -> int:
     findings = scan(args.root)
     state = "PASS" if not findings else "SAFE_STOP"
     print(f"PUBLIC_TRANSFER_BOUNDARY label={args.label} state={state} findings={len(findings)}")
-    for finding in findings:
-        print("CHECK:", finding)
+    # Public CI logs must not echo paths, identifiers, or matched content.
+    # Local reviewers may use scan() to inspect filenames in a protected environment.
+    for category in sorted({finding.partition(":")[0] for finding in findings}):
+        print("CHECK:", category)
     return 1 if findings else 0
 
 
