@@ -80,7 +80,7 @@ def scan(root: Path) -> list[str]:
             (SSH_LINK, "SSH"),
         ):
             for match in pattern.finditer(text):
-                if match.group(1).casefold() not in PUBLIC_REPOS_FOLDED:
+                if match.group(1).casefold().removesuffix(".git") not in PUBLIC_REPOS_FOLDED:
                     # Report category and file only. Never echo the target.
                     findings.append(f"NONPUBLIC_OR_UNKNOWN_{label}_LOCATOR:{rel}")
         for code, pattern in PRIVATE_CONTEXT_PATTERNS.items():
