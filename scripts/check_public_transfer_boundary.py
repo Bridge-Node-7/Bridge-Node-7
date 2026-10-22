@@ -22,9 +22,19 @@ PUBLIC_REPOS = frozenset({
     "quantum-readiness-space-communications",
 })
 
-ORG_LINK = re.compile(r"https://github\.com/Bridge-Node-7/([A-Za-z0-9_.-]+)")
-RAW_LINK = re.compile(r"https://raw\.githubusercontent\.com/Bridge-Node-7/([A-Za-z0-9_.-]+)")
-API_LINK = re.compile(r"https://api\.github\.com/repos/Bridge-Node-7/([A-Za-z0-9_.-]+)")
+ORG_LINK = re.compile(
+    r"(?:https?://)?(?:www\.)?github\.com/Bridge-Node-7/([A-Za-z0-9_.-]+)", re.I
+)
+RAW_LINK = re.compile(
+    r"(?:https?://)?raw\.githubusercontent\.com/Bridge-Node-7/([A-Za-z0-9_.-]+)", re.I
+)
+API_LINK = re.compile(
+    r"(?:https?://)?api\.github\.com/repos/Bridge-Node-7/([A-Za-z0-9_.-]+)", re.I
+)
+SSH_LINK = re.compile(
+    r"(?:ssh://)?git@github\.com[:/]Bridge-Node-7/([A-Za-z0-9_.-]+)", re.I
+)
+PUBLIC_REPOS_FOLDED = frozenset(name.casefold() for name in PUBLIC_REPOS)
 PRIVATE_CONTEXT_PATTERNS = {
     "SANDBOX_PATH": re.compile(r"sandbox:/mnt/data/", re.I),
     "MNT_DATA_PATH": re.compile(r"(?<![A-Za-z0-9_])/mnt/data/", re.I),
@@ -65,15 +75,16 @@ def scan(root: Path) -> list[str]:
     findings: list[str] = []
     root = root.resolve()
     for rel, text in _iter_text_files(root):
-        for match in ORG_LINK.finditer(text):
-            if match.group(1) not in PUBLIC_REPOS:
-                findings.append(f"NONPUBLIC_OR_UNKNOWN_GITHUB_LOCATOR:{rel}")
-        for match in RAW_LINK.finditer(text):
-            if match.group(1) not in PUBLIC_REPOS:
-                findings.append(f"NONPUBLIC_OR_UNKNOWN_RAW_LOCATOR:{rel}")
-        for match in API_LINK.finditer(text):
-            if match.group(1) not in PUBLIC_REPOS:
-                findings.append(f"NONPUBLIC_OR_UNKNOWN_API_LOCATOR:{rel}")
+        for pattern, label in (
+            (ORG_LINK, "GITHUB"),
+            (RAW_LINK, "RAW"),
+            (API_LINK, "API"),
+            (SSH_LINK, "SSH"),
+        ):
+            for match in pattern.finditer(text):
+                if match.group(1).casefold().removesuffix(".git") not in PUBLIC_REPOS_FOLDED:
+                    # Report category and file only. Never echo the target.
+                    findings.append(f"NONPUBLIC_OR_UNKNOWN_{label}_LOCATOR:{rel}")
         for code, pattern in PRIVATE_CONTEXT_PATTERNS.items():
             if pattern.search(text):
                 findings.append(f"{code}:{rel}")
@@ -94,7 +105,6 @@ def self_test() -> None:
             "https://github.com/Bridge-Node-7/not-in-public-estate\n"
             "sandbox:/mnt/data/example.txt\n"
             "https://chatgpt.com/c/example\n"
-            "https://api.github.com/repos/Bridge-Node-7/not-in-public-estate/contents\n"
             "https://chatgpt.com/share/example\n"
             "https://chat.openai.com/c/example\n",
             encoding="utf-8",
@@ -103,9 +113,27 @@ def self_test() -> None:
         assert any(x.startswith("NONPUBLIC_OR_UNKNOWN_GITHUB_LOCATOR") for x in findings)
         assert any(x.startswith("SANDBOX_PATH") for x in findings)
         assert any(x.startswith("CHATGPT_CONVERSATION") for x in findings)
-        assert any(x.startswith("NONPUBLIC_OR_UNKNOWN_API_LOCATOR") for x in findings)
         assert any(x.startswith("CHATGPT_SHARED") for x in findings)
         assert any(x.startswith("CHATGPT_LEGACY_CONVERSATION") for x in findings)
+
+        (root / "bad.md").write_text(
+            "https://API.GITHUB.COM/repos/bridge-node-7/not-in-public-estate\n"
+            "git@github.com:Bridge-Node-7/not-in-public-estate.git\n"
+            "https://GITHUB.COM/bridge-node-7/not-in-public-estate/issues/1\n"
+            "https://RAW.GITHUBUSERCONTENT.COM/bridge-node-7/not-in-public-estate/main/README.md\n",
+            encoding="utf-8",
+        )
+        findings = scan(root)
+        for kind in ("API", "SSH", "GITHUB", "RAW"):
+            assert any(x.startswith(f"NONPUBLIC_OR_UNKNOWN_{kind}_LOCATOR") for x in findings)
+        assert all("not-in-public-estate" not in x for x in findings)
+
+        (root / "bad.md").write_text(
+            "https://API.GITHUB.COM/repos/bridge-node-7/MATERIALS-TO-MISSION\n"
+            "git@github.com:Bridge-Node-7/materials-to-mission.git\n",
+            encoding="utf-8",
+        )
+        assert scan(root) == []
 
 
 def main() -> int:
