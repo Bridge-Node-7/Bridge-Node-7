@@ -18,6 +18,12 @@ def test():
     assert "sensitive-file" in m.path_categories(".env")
     assert not m.path_categories(".env.example")
     assert "sensitive-filetype" in m.path_categories("credential.p12")
+    workflow=(Path(__file__).resolve().parents[1]/".github/workflows/privacy-preflight.yml").read_text(encoding="utf-8")
+    assert "ref: main" not in workflow
+    assert "policy_ref:" in workflow
+    assert "required: true" in workflow
+    assert 'ref: ${{ inputs.policy_ref }}' in workflow
+    assert 'ref: ${{ github.event.pull_request.head.sha || github.sha }}' in workflow
     print("PASS privacy preflight smoke checks")
 if __name__=="__main__":
     test()

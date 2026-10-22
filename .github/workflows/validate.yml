@@ -15,6 +15,9 @@ on:
       - "CITATION.cff"
       - "docs/**"
       - ".github/workflows/validate.yml"
+      - ".github/workflows/privacy-preflight.yml"
+      - "scripts/privacy_preflight.py"
+      - "scripts/test_privacy_preflight.py"
       - "scripts/check_pr_title.py"
       - "scripts/check_public_transfer_boundary.py"
   schedule:
