@@ -6,10 +6,19 @@ A published artifact should have a clear source and revision, the notices requir
 
 Passing tests, producing a build, or making a file publicly reachable does not by itself establish permission to publish it, source credibility, scientific validity, or operational readiness.
 
-Each project retains its own release and rights requirements. See the public [IP and publication boundaries](../IP_POLICY.md) and the repository-specific license.
+Each project retains its own release and rights requirements. See the public [IP and publication boundaries](../IP_POLICY.md), the [public information-flow boundary](PUBLIC_INFORMATION_FLOW.md), and the repository-specific license.
 
 ## Pull-request metadata boundary
 
 Use short, neutral PR titles describing the change rather than identities, personal accounts, internal deliberations, unannounced relationships, unreleased terms or security findings. Exclude personal contact details, local filesystem paths, authentication material and links containing credentials. Descriptions and logs follow the same minimum-disclosure rule. Legitimate public scholarly attribution is not automatically prohibited.
 
 The public profile checks its own PR title on creation and edits, and periodically inspects open PR titles in the selected public repositories. This is a bounded metadata review, not a guarantee against historic Git exposure, hidden credentials, source vulnerabilities or provider-side records. Private-repository titles and internal records must stay outside public CI artifacts and must be reviewed with separately authorized access. Merge and deployment authorization remain distinct human decisions.
+
+
+## Private-to-public ingress boundary
+
+Public repositories receive standalone, minimum-necessary derivatives rather than private working context. The public estate uses a public allowlist rather than publishing a private denylist: organization repository links must target repositories already known to be public.
+
+The bounded estate scan also rejects workspace/sandbox locators, private connector-style file handles, and ChatGPT conversation/project locators in public default-branch content.
+
+This check supplements, rather than replaces, repository-specific evidence, rights, security, release, deployment and human-authorization gates.
