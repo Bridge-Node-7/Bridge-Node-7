@@ -2,6 +2,11 @@ name: Privacy preflight
 
 on:
   workflow_call:
+    inputs:
+      policy_ref:
+        description: Immutable reviewed Bridge-Node-7 policy commit SHA
+        required: true
+        type: string
   pull_request:
   push:
     branches: [main]
@@ -25,11 +30,22 @@ jobs:
           submodules: false
           lfs: false
 
-      - name: Checkout trusted privacy policy
+      - name: Checkout exact privacy policy for reusable call
+        if: github.repository != 'Bridge-Node-7/Bridge-Node-7'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           repository: Bridge-Node-7/Bridge-Node-7
-          ref: main
+          ref: ${{ inputs.policy_ref }}
+          path: policy
+          persist-credentials: false
+          submodules: false
+          lfs: false
+
+      - name: Checkout exact privacy policy for control repo
+        if: github.repository == 'Bridge-Node-7/Bridge-Node-7'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           path: policy
           persist-credentials: false
           submodules: false
