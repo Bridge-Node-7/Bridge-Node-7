@@ -38,7 +38,7 @@ PUBLIC_REPOS_FOLDED = frozenset(name.casefold() for name in PUBLIC_REPOS)
 PRIVATE_CONTEXT_PATTERNS = {
     "SANDBOX_PATH": re.compile(r"sandbox:/mnt/data/", re.I),
     "MNT_DATA_PATH": re.compile(r"(?<![A-Za-z0-9_])/mnt/data/", re.I),
-    "USER_HOME_PATH": re.compile(r"(?:[A-Z]:[\\/](?:Users|Documents and Settings)[\\/][^\\/\s]+|/(?:Users|home)/[^/\s]+)", re.I),
+    "USER_HOME_PATH": re.compile(r"(?:[A-Z]:[\\/](?:Users|Documents and Settings)[\\/][^\\/\s]+|(?<![A-Za-z0-9.:])/(?:Users|home)/[^/\s]+)", re.I),
     "CHATGPT_CONVERSATION": re.compile(r"https://chatgpt\.com/c/", re.I),
     "CHATGPT_PROJECT": re.compile(r"https://chatgpt\.com/g/g-p-", re.I),
     "CHATGPT_SHARED": re.compile(r"https://(?:chatgpt\.com|chat\.openai\.com)/share/", re.I),
