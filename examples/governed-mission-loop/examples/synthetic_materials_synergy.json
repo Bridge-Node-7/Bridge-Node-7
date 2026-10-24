@@ -1,0 +1,48 @@
+{
+  "schema": "bn7.mission-synergy-compass.plan/0.1",
+  "handling": "PUBLIC_SYNTHETIC",
+  "beneficiary": "A fictional advanced-materials engineering team",
+  "success_observation": "An independent reviewer identifies which fictional supplier assumptions require new evidence",
+  "capabilities": [
+    "source-review",
+    "materials-review",
+    "mission-assurance",
+    "decision-brief"
+  ],
+  "mission": {
+    "mission_id": "SYN-MATERIALS-003",
+    "owner": "human-reviewer",
+    "goal": "Prepare a bounded synthetic materials-dependent mission decision",
+    "domain": "engineering",
+    "budget_units": 3,
+    "sources": [
+      {
+        "id": "MAT-1",
+        "state": "SIMULATED",
+        "reference": "Fictional lab evaluation fixture"
+      }
+    ],
+    "actions": [
+      {
+        "id": "DESIGN-1",
+        "role": "engineering",
+        "kind": "DRAFT_CODE_CHANGE",
+        "target": "Synthetic materials data visual",
+        "budget_units": 1,
+        "source_ids": [
+          "MAT-1"
+        ]
+      },
+      {
+        "id": "CHANGE-1",
+        "role": "engineering",
+        "kind": "PREPARE_INTERNAL_CHANGE",
+        "target": "Offline demonstration",
+        "budget_units": 1,
+        "source_ids": [
+          "MAT-1"
+        ]
+      }
+    ]
+  }
+}
