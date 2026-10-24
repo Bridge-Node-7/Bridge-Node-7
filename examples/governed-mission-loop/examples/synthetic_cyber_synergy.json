@@ -1,0 +1,61 @@
+{
+  "schema": "bn7.mission-synergy-compass.plan/0.1",
+  "handling": "PUBLIC_SYNTHETIC",
+  "beneficiary": "A fictional community member seeking accessible online-safety guidance",
+  "success_observation": "A consenting test participant understands a short, independently reviewed safety checklist",
+  "capabilities": [
+    "source-review",
+    "cyber-review",
+    "decision-brief"
+  ],
+  "mission": {
+    "mission_id": "SYN-CYBER-002",
+    "owner": "human-reviewer",
+    "goal": "Evaluate a fictional digital-safety checklist using public, synthetic evidence",
+    "domain": "research",
+    "budget_units": 5,
+    "sources": [
+      {
+        "id": "SRC-1",
+        "state": "REPORTED",
+        "reference": "Synthetic paraphrase of a fictional safety recommendation"
+      },
+      {
+        "id": "SRC-2",
+        "state": "HYPOTHESIS",
+        "reference": "Fictional accessibility hypothesis"
+      }
+    ],
+    "actions": [
+      {
+        "id": "READ-1",
+        "role": "research",
+        "kind": "READ_PUBLIC_SOURCE",
+        "target": "Synthetic source review",
+        "budget_units": 1,
+        "source_ids": [
+          "SRC-1"
+        ]
+      },
+      {
+        "id": "BRIEF-1",
+        "role": "research",
+        "kind": "DRAFT_RESEARCH_BRIEF",
+        "target": "Synthetic advice brief",
+        "budget_units": 2,
+        "source_ids": [
+          "SRC-1",
+          "SRC-2"
+        ]
+      },
+      {
+        "id": "POST-1",
+        "role": "gtm",
+        "kind": "SEND_EXTERNAL_MESSAGE",
+        "target": "Fictional public newsletter",
+        "budget_units": 1,
+        "source_ids": []
+      }
+    ]
+  }
+}
