@@ -1,0 +1,31 @@
+name: Governed mission loop candidate
+
+on:
+  pull_request:
+    paths:
+      - "examples/governed-mission-loop/**"
+      - ".github/workflows/governed-mission-loop-candidate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-simulation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          submodules: false
+          lfs: false
+      - name: Test policy, budget, audit, and promotion boundaries
+        run: python3 -m unittest discover -s examples/governed-mission-loop/tests -v
+      - name: Run synthetic case and verify trace
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 examples/governed-mission-loop/mission_loop.py examples/governed-mission-loop/examples/synthetic_public_mission.json > "$RUNNER_TEMP/mission-report.json"
+          python3 examples/governed-mission-loop/mission_loop.py --verify-audit "$RUNNER_TEMP/mission-report.json"
