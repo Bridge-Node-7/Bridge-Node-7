@@ -48,3 +48,54 @@ An actual agent SDK could propose actions but must not directly execute them. A 
 The mission preflight may inform the human-owned decision and assurance architecture, but it must **not** become a substitute for domain-owned records, canonical intelligence, or evidence-graph reasoning. No cross-repository contracts are changed here.
 
 Sources for design context: [OpenAI Agents SDK guardrails](https://openai.github.io/openai-agents-python/guardrails/), [OpenAI agent evaluations](https://developers.openai.com/api/docs/guides/agent-evals), [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework). These are references, not certifications or endorsements.
+
+
+## Mission Synergy Compass — existing public methods, one human-owned mission
+
+An optional, standard-library-only preparation layer now converts a declared
+**PUBLIC_SYNTHETIC** mission into a deterministic, human-readable referral plan.
+It reuses the same mission and action preflight above and points to the
+independently owned **public** Frontier Intelligence Workflows, Materials-to-Mission,
+AI Cyber Assurance, Frontier Mission Assurance, and Frontier Decision Engine.
+It does not import their packages, call their APIs, access private repositories,
+rewrite their evidence, or alter any portable contract.
+
+From this directory:
+
+```bash
+python3 mission_synergy.py examples/synthetic_cyber_synergy.json --markdown
+python3 mission_synergy.py examples/synthetic_materials_synergy.json --markdown
+python3 mission_synergy.py examples/synthetic_cyber_synergy.json > mission-synergy-report.json
+```
+
+Both examples are fictional. The first guides public-safety research through
+source review, cyber assurance, and a decision brief. The second links research,
+materials dependencies, technical assurance, and decision preparation. They
+demonstrate *workflow selection and evidence handoff intent*; no underlying
+domain method is executed or scientifically verified.
+
+A referral is **not** an interoperable data packet. Real cross-system exchanges
+must use the producer's independently versioned portable contracts and its own
+handling, review, origin, and integrity controls. The planner never labels its
+result as CANONICAL, RELEASED, authorized, or customer validated.
+
+Unknown capabilities or private/protected handling are rejected. Prohibited
+or unknown proposed actions produce SAFE_STOP and a nonzero CLI exit code
+(3), while invalid requests exit 2. Passing plans exit 0 but still require
+human authority for real actions. Input declarations may contain unreviewed
+claims; even a self-declared VERIFIED state does not establish factual truth.
+
+The planner is an illustrative, bounded **front-door routing** experiment, not
+a new registry of the organization's truth, a Mission Graph replacement,
+an AI agent identity provider, or a policy enforcement engine.
+
+## Next evidence needed
+
+1. Have independent users attempt a complete task using the existing public
+   reference methods, and record where this handoff sequence causes friction.
+2. Check that a reviewed, explicit source-owned contract exists before proposing
+   any machine-to-machine transfer. Do not infer interoperability from links.
+3. Compare completion time, accepted result quality, and review burden against
+   a simple manual workflow and a single-agent alternative.
+4. Independently examine privacy, licensing, consent, accessibility, and
+   consequential-authority boundaries before any public app release.
