@@ -1,0 +1,17 @@
+{
+  "mission_id": "SYN-001",
+  "owner": "human-reviewer",
+  "goal": "Prepare an evidence-aware briefing for an open-access digital safety checklist.",
+  "domain": "research",
+  "budget_units": 8,
+  "sources": [
+    {"id": "SRC-1", "state": "REPORTED", "reference": "Fictional published safety guidance for a synthetic case"},
+    {"id": "SRC-2", "state": "HYPOTHESIS", "reference": "Unverified idea for simplifying a user checklist"}
+  ],
+  "actions": [
+    {"id": "READ-1", "role": "research", "kind": "READ_PUBLIC_SOURCE", "target": "SRC-1", "budget_units": 1, "source_ids": ["SRC-1"]},
+    {"id": "BRIEF-1", "role": "research", "kind": "DRAFT_RESEARCH_BRIEF", "target": "synthetic-brief", "budget_units": 2, "source_ids": ["SRC-1", "SRC-2"]},
+    {"id": "POST-1", "role": "gtm", "kind": "SEND_EXTERNAL_MESSAGE", "target": "public-channel", "budget_units": 1, "source_ids": ["SRC-1"]},
+    {"id": "PAY-1", "role": "ops", "kind": "TRANSFER_FUNDS", "target": "sample-vendor", "budget_units": 1, "source_ids": []}
+  ]
+}
