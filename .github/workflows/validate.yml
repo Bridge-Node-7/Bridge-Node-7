@@ -286,9 +286,16 @@ jobs:
           trap 'rm -rf "$audit_root"' EXIT
 
           for repo in "${expected_public_repos[@]}"; do
-            git clone --quiet --depth 1 "https://github.com/Bridge-Node-7/${repo}.git" "${audit_root}/${repo}"
+            if [[ "${repo}" == "Bridge-Node-7" ]]; then
+              # Scan this exact checked-out candidate on PR and main on push.
+              # Never mask a violation already present in the candidate.
+              scan_root="."
+            else
+              git clone --quiet --depth 1 "https://github.com/Bridge-Node-7/${repo}.git" "${audit_root}/${repo}"
+              scan_root="${audit_root}/${repo}"
+            fi
             python3 scripts/check_public_transfer_boundary.py \
-              --root "${audit_root}/${repo}" \
+              --root "${scan_root}" \
               --label "${repo}"
           done
 
