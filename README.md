@@ -50,4 +50,4 @@ Public repositories contain selected software, methods, research references, and
 
 Official sources: [Bridge Node 7 on GitHub](https://github.com/Bridge-Node-7) · [BridgeNode7.com](https://bridgenode7.com/). Each repository's license and notices define reuse rights. Independent copies are not official releases unless linked from these sources.
 
-[Governance](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/GOVERNANCE.md) · [IP and publication](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/IP_POLICY.md) · [Names and affiliation](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/TRADEMARKS.md)
+[Public review framework](docs/FRONTIER_ASSURANCE_ARCHITECTURE.md) · [Governance](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/GOVERNANCE.md) · [IP and publication](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/IP_POLICY.md) · [Names and affiliation](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/TRADEMARKS.md)
