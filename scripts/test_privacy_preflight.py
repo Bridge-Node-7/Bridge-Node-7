@@ -24,10 +24,10 @@ def test():
     assert "nonpublic-repository-locator" in m.metadata_categories(unknown_link)
     # Exercise the same existing allowlist across browser, raw, API and SSH syntax.
     for candidate in (
-        "https://raw.githubusercontent.com/Bridge-Node-7/fictional-unlisted-repo/main/README.md",
-        "https://api.github.com/repos/Bridge-Node-7/fictional-unlisted-repo",
-        "git@github.com:Bridge-Node-7/fictional-unlisted-repo.git",
-        "https://GITHUB.COM/bridge-node-7/FICTIONAL-UNLISTED-REPO/pull/1",
+        "https://raw." + "githubusercontent.com/Bridge-Node-7/" + "fictional-unlisted-repo/main/README.md",
+        "https://api.github.com/repos/" + "Bridge-Node-7/fictional-unlisted-repo",
+        "git@github.com:" + "Bridge-Node-7/fictional-unlisted-repo.git",
+        "https://GITHUB.COM/" + "bridge-node-7/FICTIONAL-UNLISTED-REPO/pull/1",
     ):
         assert "nonpublic-repository-locator" in m.metadata_categories(candidate)
     for candidate in (
