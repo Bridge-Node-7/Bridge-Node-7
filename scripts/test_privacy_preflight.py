@@ -22,6 +22,22 @@ def test():
     unknown_link = "https://github.com/" + "Bridge-Node-7/fictional-unlisted-repo/pull/1"
     assert "nonpublic-repository-locator" not in m.metadata_categories(public_link)
     assert "nonpublic-repository-locator" in m.metadata_categories(unknown_link)
+    # Exercise the same existing allowlist across browser, raw, API and SSH syntax.
+    for candidate in (
+        "https://raw.githubusercontent.com/Bridge-Node-7/fictional-unlisted-repo/main/README.md",
+        "https://api.github.com/repos/Bridge-Node-7/fictional-unlisted-repo",
+        "git@github.com:Bridge-Node-7/fictional-unlisted-repo.git",
+        "https://GITHUB.COM/bridge-node-7/FICTIONAL-UNLISTED-REPO/pull/1",
+    ):
+        assert "nonpublic-repository-locator" in m.metadata_categories(candidate)
+    for candidate in (
+        "https://raw.githubusercontent.com/Bridge-Node-7/pax-silica/main/README.md",
+        "https://api.github.com/repos/Bridge-Node-7/pax-silica",
+        "git@github.com:Bridge-Node-7/pax-silica.git",
+        "https://github.com/independent-example/project",
+    ):
+        assert "nonpublic-repository-locator" not in m.metadata_categories(candidate)
+    assert "private-context-locator" in m.metadata_categories("https://chatgpt.com" + "/c/illustrative")
     assert "private-context-locator" in m.metadata_categories("https://chatgpt.com" + "/share/illustrative")
     assert "private-context-locator" in m.metadata_categories("sandbox:" + "/mnt" + "/data/illustrative")
     assert not m.metadata_categories("docs: clarify a public method")
