@@ -9,6 +9,7 @@ import argparse
 import hashlib
 import os
 from pathlib import Path
+from check_public_transfer_boundary import ORG_LINK, RAW_LINK, API_LINK, SSH_LINK, PUBLIC_REPOS_FOLDED, PRIVATE_CONTEXT_PATTERNS
 import re
 import subprocess
 import sys
@@ -35,6 +36,17 @@ def fingerprint(value):
 
 def categories(s):
     return {name for name, rx in PATTERNS.items() if rx.search(s)}
+
+def metadata_categories(value):
+    """Apply the already-reviewed public-locator policy to PR title/body only."""
+    result = categories(value)
+    for pattern in (ORG_LINK, RAW_LINK, API_LINK, SSH_LINK):
+        if any(m.group(1).casefold().removesuffix(".git") not in PUBLIC_REPOS_FOLDED
+               for m in pattern.finditer(value)):
+            result.add("nonpublic-repository-locator")
+    if any(pattern.search(value) for pattern in PRIVATE_CONTEXT_PATTERNS.values()):
+        result.add("private-context-locator")
+    return result
 
 def path_categories(path):
     result = categories(path)
@@ -91,7 +103,7 @@ def scan(root, base=None, metadata=None):
             for c in categories(b.decode("utf-8", "replace")):
                 findings.add((fingerprint(path), c))
     for value in metadata or []:
-        for c in categories(value):
+        for c in metadata_categories(value):
             findings.add(("public-metadata", c))
     return sorted(findings)
 
