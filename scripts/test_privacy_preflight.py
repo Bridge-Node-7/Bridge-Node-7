@@ -45,6 +45,8 @@ def test():
     assert "ref: main" not in workflow
     assert "policy_ref:" in workflow
     assert "required: true" in workflow
+    assert "edited" in workflow
+    assert "ready_for_review" in workflow
     assert 'ref: ${{ inputs.policy_ref }}' in workflow
     assert 'ref: ${{ github.event.pull_request.head.sha || github.sha }}' in workflow
     print("PASS privacy preflight smoke checks")
