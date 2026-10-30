@@ -240,6 +240,7 @@ jobs:
           grep -F "provided for evaluation and review only." <<<"$fma_license" >/dev/null
 
           expected_public_repos=(
+            ".github"
             "Bridge-Node-7"
             "ai-cyber-assurance"
             "frontier-decision-engine"
@@ -272,6 +273,7 @@ jobs:
           python3 scripts/check_public_transfer_boundary.py --self-test
 
           expected_public_repos=(
+            ".github"
             "Bridge-Node-7"
             "ai-cyber-assurance"
             "frontier-decision-engine"
