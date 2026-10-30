@@ -4,12 +4,7 @@
 
 *Frontier Intelligence · Systems Engineering · Mission Assurance*
 
-| | |
-|---|---|
-| **What** | Software and engineering methods that connect technical evidence, requirements, materials, and supplier information for consequential decisions |
-| **Status** | Public product portfolio — see each repository's latest GitHub Release |
-| **Architecture** | [docs/FRONTIER_ASSURANCE_ARCHITECTURE.md](docs/FRONTIER_ASSURANCE_ARCHITECTURE.md) |
-| **Collaboration** | [Innovation Partnerships](https://bridgenode7.com/partner/) · [contact@bridgenode7.com](mailto:contact@bridgenode7.com) · GitHub Issues on each repository |
+Public product portfolio — see each repository's latest GitHub Release.
 
 Breakthrough technologies bring together research, hardware, software, materials, and people.
 
@@ -57,6 +52,6 @@ Public repositories contain selected software, methods, research references, and
 
 Official sources: [Bridge Node 7 on GitHub](https://github.com/Bridge-Node-7) · [BridgeNode7.com](https://bridgenode7.com/). Each repository's license and notices define reuse rights. Independent copies are not official releases unless linked from these sources.
 
-**Licensing clarity:** This profile and its original documentation are all rights reserved, rather than licensed as open-source software. Frontier Mission Assurance also has a separate all-rights-reserved evaluation/review notice. Evaluation and collaboration inquiries are welcome via [Innovation Partnerships](https://bridgenode7.com/partner/) or GitHub Issues. Other linked repositories may use different licenses (including MIT and Apache-2.0); consult each repository's own `LICENSE` for its actual reuse terms.
+**Licensing clarity:** This profile and its original documentation are all rights reserved, rather than licensed as open-source software. Frontier Mission Assurance also has a separate all-rights-reserved evaluation/review notice. Other linked repositories may use different licenses (including MIT and Apache-2.0); consult each repository's own `LICENSE` for its actual reuse terms.
 
 [Public review framework](docs/FRONTIER_ASSURANCE_ARCHITECTURE.md) · [Governance](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/GOVERNANCE.md) · [IP and publication](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/IP_POLICY.md) · [Names and affiliation](https://github.com/Bridge-Node-7/Bridge-Node-7/blob/main/TRADEMARKS.md)
