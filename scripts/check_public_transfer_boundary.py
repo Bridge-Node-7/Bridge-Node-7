@@ -38,10 +38,10 @@ PUBLIC_REPOS_FOLDED = frozenset(name.casefold() for name in PUBLIC_REPOS)
 PRIVATE_CONTEXT_PATTERNS = {
     "SANDBOX_PATH": re.compile(r"sandbox:/mnt/data/", re.I),
     "MNT_DATA_PATH": re.compile(r"(?<![A-Za-z0-9_])/mnt/data/", re.I),
-    "CHATGPT_CONVERSATION": re.compile(r"https://chatgpt\.com/c/", re.I),
-    "CHATGPT_PROJECT": re.compile(r"https://chatgpt\.com/g/g-p-", re.I),
-    "CHATGPT_SHARED": re.compile(r"https://(?:chatgpt\.com|chat\.openai\.com)/share/", re.I),
-    "CHATGPT_LEGACY_CONVERSATION": re.compile(r"https://chat\.openai\.com/(?:c/|g/)", re.I),
+    "EXTERNAL_AI_ASSISTANT_CONVERSATION": re.compile(r"https://chatgpt\.com/c/", re.I),
+    "EXTERNAL_AI_ASSISTANT_PROJECT": re.compile(r"https://chatgpt\.com/g/g-p-", re.I),
+    "EXTERNAL_AI_ASSISTANT_SHARED": re.compile(r"https://(?:chatgpt\.com|chat\.openai\.com)/share/", re.I),
+    "EXTERNAL_AI_ASSISTANT_LEGACY_CONVERSATION": re.compile(r"https://chat\.openai\.com/(?:c/|g/)", re.I),
     "CONNECTOR_FILE_REF": re.compile(r"\bturn\d+file\d+\b", re.I),
     "INTERNAL_FILE_ID": re.compile(r"\bfile_[0-9a-f]{20,}\b", re.I),
 }
@@ -112,9 +112,9 @@ def self_test() -> None:
         findings = scan(root)
         assert any(x.startswith("NONPUBLIC_OR_UNKNOWN_GITHUB_LOCATOR") for x in findings)
         assert any(x.startswith("SANDBOX_PATH") for x in findings)
-        assert any(x.startswith("CHATGPT_CONVERSATION") for x in findings)
-        assert any(x.startswith("CHATGPT_SHARED") for x in findings)
-        assert any(x.startswith("CHATGPT_LEGACY_CONVERSATION") for x in findings)
+        assert any(x.startswith("EXTERNAL_AI_ASSISTANT_CONVERSATION") for x in findings)
+        assert any(x.startswith("EXTERNAL_AI_ASSISTANT_SHARED") for x in findings)
+        assert any(x.startswith("EXTERNAL_AI_ASSISTANT_LEGACY_CONVERSATION") for x in findings)
 
         (root / "bad.md").write_text(
             "https://API.GITHUB.COM/repos/bridge-node-7/not-in-public-estate\n"

@@ -33,7 +33,7 @@ The private review receipt remains private.
 - links or raw-content URLs to nonpublic Bridge Node 7 repositories;
 - private branch or source-history locators;
 - local workspace or sandbox paths;
-- ChatGPT conversation/project URLs used as internal working context;
+- External AI assistant conversation/project URLs used as internal working context;
 - connector/file citation identifiers or other private retrieval handles;
 - raw private notes, evidence IDs or internal deliberation required only to reconstruct how the derivative was produced.
 
@@ -48,7 +48,7 @@ It verifies public default branches for:
 - organization GitHub links that point outside the known public estate;
 - raw-content links that point outside the known public estate;
 - workspace/sandbox locators;
-- ChatGPT conversation/project locators;
+- External AI assistant conversation/project locators;
 - connector-style private file handles.
 
 A finding causes a fail-closed CI result for review.
