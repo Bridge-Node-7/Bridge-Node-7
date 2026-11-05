@@ -19,6 +19,6 @@ The public profile checks its own PR title on creation and edits, and periodical
 
 Public repositories receive standalone, minimum-necessary derivatives rather than private working context. The public estate uses a public allowlist rather than publishing a private denylist: organization repository links must target repositories already known to be public.
 
-The bounded estate scan also rejects workspace/sandbox locators, private connector-style file handles, and ChatGPT conversation/project locators in public default-branch content.
+The bounded estate scan also rejects workspace/sandbox locators, private connector-style file handles, and external AI assistant conversation/project locators in public default-branch content.
 
 This check supplements, rather than replaces, repository-specific evidence, rights, security, release, deployment and human-authorization gates.
