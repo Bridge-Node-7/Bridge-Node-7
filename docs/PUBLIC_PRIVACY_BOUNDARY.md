@@ -28,7 +28,7 @@ Use role identifiers such as "reviewer", "operator" and "organization maintainer
 
 The privacy preflight catches selected email domains, local paths, phone-number formats, credential shapes and sensitive filenames. It does **not** determine which human proper nouns are sensitive, whether a business email is private, whether image/PDF EXIF contains identity, or whether a historical Git object has leaked data. Review of full commit history, PR/issue comments, branch protection, organization members, GitHub Actions permissions, secret scanning, old releases and hosting caches is a separate gate.
 
-A workflow passing is not an OPSEC clearance. Require this workflow as a branch status check where administrative access permits. No publication should rely on a single automated detector.
+Passing checks do not authorize publication. Require the workflow as a branch status check where available; retain human review.
 
 ## Decision rule
 

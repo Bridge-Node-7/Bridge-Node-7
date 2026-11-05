@@ -87,9 +87,7 @@ jobs:
               assert phrase in license_text, f"LICENSE missing rights invariant: {phrase}"
 
           readme = Path("README.md").read_text(encoding="utf-8")
-          # All control documents above must still exist. The public profile
-          # links to the architecture and stewardship entry points without
-          # repeating the full internal control-document index.
+          # Keep the profile links focused on architecture and stewardship.
           for target in (
               "docs/FRONTIER_ASSURANCE_ARCHITECTURE.md",
               "GOVERNANCE.md",
