@@ -7,7 +7,7 @@
 Bridge Node 7 builds evidence-native assurance software and methods that connect technical evidence, system requirements, materials, and supplier information to the decisions they support.
 
 Public portfolio — each repository’s latest GitHub Release.  
-Partnerships: [bridgenode7.com/partner/](https://bridgenode7.com/partner/).
+[Explore Solutions](#solutions) · [Innovation Partnerships](https://bridgenode7.com/partner/)
 
 ## Solutions
 
@@ -43,11 +43,11 @@ Bring a specific engineering challenge, research question, or development object
 
 [Innovation Partnerships](https://bridgenode7.com/partner/) · [contact@bridgenode7.com](mailto:contact@bridgenode7.com)
 
-## Sources & stewardship
+## Sources & Stewardship
 
-Public repositories contain selected software, methods, research references, and synthetic examples. Automated checks demonstrate stated software behavior. Scientific validation, hardware qualification, and operational readiness require separate evidence.
+Public repositories contain selected software, methods, research references, and synthetic examples. Automated checks demonstrate stated software behavior; scientific validation, hardware qualification, and operational readiness require separate evidence.
 
-Official sources: [Bridge Node 7 on GitHub](https://github.com/Bridge-Node-7) · [BridgeNode7.com](https://bridgenode7.com/). Each repository’s `LICENSE` defines reuse rights. Independent copies are not official releases unless linked from these sources.
+Official sources: [Bridge Node 7 on GitHub](https://github.com/Bridge-Node-7) · [BridgeNode7.com](https://bridgenode7.com/). Each repository's license and notices define reuse rights. Independent copies are not official releases unless linked from these sources.
 
 This profile and its original documentation are all rights reserved. Frontier Mission Assurance carries a separate evaluation/review notice. Other linked repositories may use different licenses; consult each repository’s own `LICENSE`.
 
