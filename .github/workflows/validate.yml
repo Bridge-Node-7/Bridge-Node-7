@@ -21,7 +21,7 @@ on:
       - "scripts/check_pr_title.py"
       - "scripts/check_public_transfer_boundary.py"
   schedule:
-    - cron: "29 12 * * *"
+    - cron: "29 12 * * 1"
   workflow_dispatch:
 
 permissions:
