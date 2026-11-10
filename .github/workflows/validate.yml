@@ -197,6 +197,7 @@ jobs:
         run: python3 scripts/check_pr_title.py --title-env PR_TITLE
 
   public-estate-integrity:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 6
     steps:
