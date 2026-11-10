@@ -229,7 +229,7 @@ jobs:
           )
 
           for repo in "${!expected_spdx[@]}"; do
-            metadata="$(curl --fail --silent --show-error --location               -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GH_TOKEN"               "https://api.github.com/repos/Bridge-Node-7/$repo")"
+            metadata="$(gh api "repos/Bridge-Node-7/$repo")"
             test "$(jq -r '.visibility' <<<"$metadata")" = "public"
             test "$(jq -r '.default_branch' <<<"$metadata")" = "main"
             test "$(jq -r '.license.spdx_id // ""' <<<"$metadata")" = "${expected_spdx[$repo]}"
@@ -253,7 +253,7 @@ jobs:
           )
 
           mapfile -t observed_public_repos < <(
-            curl --fail --silent --show-error --location               -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GH_TOKEN"               "https://api.github.com/users/Bridge-Node-7/repos?type=owner&per_page=100"               | jq -r '.[] | select(.fork == false) | .name'               | sort
+            gh api "users/Bridge-Node-7/repos?type=owner&per_page=100" --jq '.[] | select(.fork == false) | .name'               | sort
           )
 
           mapfile -t expected_public_repos_sorted < <(
