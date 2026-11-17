@@ -16,7 +16,6 @@ PUBLIC_REPOS = frozenset({
     "ai-cyber-assurance",
     "frontier-decision-engine",
     "frontier-intelligence-workflows",
-    "frontier-mission-assurance",
     "materials-to-mission",
     "pax-silica",
     "quantum-readiness-space-communications",
@@ -96,7 +95,7 @@ def self_test() -> None:
         root = Path(d)
         (root / "ok.md").write_text(
             "https://github.com/Bridge-Node-7/materials-to-mission\n"
-            "https://raw.githubusercontent.com/Bridge-Node-7/frontier-mission-assurance/main/README.md\n",
+            "https://raw.githubusercontent.com/Bridge-Node-7/frontier-intelligence-workflows/main/README.md\n",
             encoding="utf-8",
         )
         assert scan(root) == []

@@ -1,4 +1,4 @@
-name: Independent external-finding conformance
+name: Independent FIW conformance
 
 on:
   pull_request:
@@ -18,86 +18,9 @@ concurrency:
   cancel-in-progress: true
 
 # This is a deliberately bounded, on-demand estate acceptance test.
-# Exact reviewed producer/consumer SHAs must be updated when the interface changes.
-# It never pushes to either checkout, imports real cases, or authorizes decisions.
+# FMA-dependent conformance remains with the FMA source and authorized runner.
+# This public workflow checks FIW behavior with public synthetic inputs.
 jobs:
-  m2m-fma-current-consumer:
-    name: M2M -> FMA current consumer and negative-boundary replay
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - name: Checkout pinned M2M
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          repository: Bridge-Node-7/materials-to-mission
-          ref: 63867a6f4563585e989fee8bc0174eb6ad5df182
-          path: producer
-          persist-credentials: false
-      - name: Checkout pinned FMA
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          repository: Bridge-Node-7/frontier-mission-assurance
-          ref: f0a4ebb00d6c0a4d713f724c2a461de975c03d98
-          path: consumer
-          persist-credentials: false
-      - name: Setup Python 3.12
-        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
-        with:
-          python-version: "3.12"
-      - name: Independently verify producer -> installed consumer
-        shell: bash
-        run: |
-          set -euo pipefail
-          python -m pip install --disable-pip-version-check ./producer ./consumer
-          cmp producer/contracts/fma/assurance-graph.schema.json consumer/schemas/assurance-graph.schema.json
-          cmp producer/contracts/fma/decision-receipt.schema.json consumer/schemas/decision-receipt.schema.json
-          python producer/scripts/export_fma_projection.py producer/examples/synthetic-critical-material-pathway/case.json --output-dir "$RUNNER_TEMP/projection"
-          fma validate "$RUNNER_TEMP/projection/assurance-graph.json"
-          fma decision "$RUNNER_TEMP/projection/assurance-graph.json" "$RUNNER_TEMP/projection/decision-receipt.json"
-          fma coverage "$RUNNER_TEMP/projection/assurance-graph.json" > "$RUNNER_TEMP/coverage.json"
-          python - "$RUNNER_TEMP/projection" <<'PY'
-          import hashlib, json, pathlib, sys
-          root=pathlib.Path(sys.argv[1])
-          g=json.loads((root/"assurance-graph.json").read_text())
-          d=json.loads((root/"decision-receipt.json").read_text())
-          m=json.loads((root/"projection-manifest.json").read_text())
-          assert d["decision"]["disposition"]=="HOLD", "synthetic nonapproval must survive"
-          assert m["projection_is_lossy"] is True
-          assert m["source"]["validation_profile"]=="m0-strict-0.4.0"
-          assert m["source"]["toolkit_version"]
-          for name in ("assurance-graph.json","decision-receipt.json"):
-              assert m["artifacts"][name]==hashlib.sha256((root/name).read_bytes()).hexdigest()
-          assert "nodes" in g and "edges" in g
-          print("PASS current M2M producer -> current FMA consumer; hashes, HOLD, and profile preserved")
-          PY
-          for source in producer/examples/invalid/*.json; do
-            rm -rf "$RUNNER_TEMP/rejected"
-            if python producer/scripts/export_fma_projection.py "$source" --output-dir "$RUNNER_TEMP/rejected"; then
-              echo "SAFE STOP: rejected case was accepted: $source"
-              exit 1
-            fi
-            test ! -e "$RUNNER_TEMP/rejected" || { echo "SAFE STOP: invalid case wrote artifacts"; exit 1; }
-          done
-          python - "$RUNNER_TEMP/projection" "$RUNNER_TEMP" <<'PY'
-          import json,pathlib,sys
-          good=pathlib.Path(sys.argv[1]);root=pathlib.Path(sys.argv[2])
-          graph=json.loads((good/"assurance-graph.json").read_text())
-          graph["nodes"][0]["criticality"]=None
-          (root/"null-criticality.json").write_text(json.dumps(graph))
-          PY
-          if fma validate "$RUNNER_TEMP/null-criticality.json"; then
-            echo "SAFE STOP: explicit null criticality passed FMA"; exit 1
-          fi
-          python - "$RUNNER_TEMP/projection" "$RUNNER_TEMP" <<'PY'
-          import json,pathlib,sys
-          good=pathlib.Path(sys.argv[1]);root=pathlib.Path(sys.argv[2])
-          graph=json.loads((good/"assurance-graph.json").read_text())
-          graph["nodes"][0].pop("criticality",None)
-          (root/"omitted-criticality.json").write_text(json.dumps(graph))
-          PY
-          fma validate "$RUNNER_TEMP/omitted-criticality.json"
-          echo "PASS cross-repository consumer and invalid-input replay"
-
   fiw-macos-alias:
     name: FIW macOS real /var -> /private/var replay
     runs-on: macos-latest

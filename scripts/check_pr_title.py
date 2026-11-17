@@ -11,7 +11,7 @@ from urllib.request import Request, urlopen
 REPOS = (
     "Bridge-Node-7", "ai-cyber-assurance",
     "frontier-decision-engine", "frontier-intelligence-workflows",
-    "frontier-mission-assurance", "materials-to-mission",
+    "materials-to-mission",
     "pax-silica", "quantum-readiness-space-communications",
 )
 UNSAFE = (
