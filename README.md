@@ -6,16 +6,16 @@
 
 Bridge Node 7 builds evidence-native assurance software and methods that connect technical evidence, system requirements, materials, and supplier information to the decisions they support.
 
-Public portfolio — each repository’s latest GitHub Release.  
+Public portfolio — selected technical references and capabilities.  
 [Explore Solutions](#solutions) · [Innovation Partnerships](https://bridgenode7.com/partner/)
 
 ## Solutions
 
-### [Frontier Mission Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance)
+### [Frontier Mission Assurance](https://bridgenode7.com/frontier-mission-assurance/)
 
 Engineering assurance software that links technical evidence, assumptions, and system requirements to the decisions they support. A synthetic fault-tolerant quantum-computing example shows how changes may affect earlier estimates and reviews.
 
-[Evaluation guide](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FIVE_MINUTE_EVALUATION.md) · [FTQC change-impact example](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FTQC_GOLDEN_PATH.md) · [Existing-work adoption](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/EXTERNAL_RESEARCH_ADOPTION.md)
+[Explore the capability](https://bridgenode7.com/frontier-mission-assurance/) · [Partner](https://bridgenode7.com/partner/)
 
 ### [Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission)
 
@@ -35,7 +35,7 @@ A browser-based decision-support application that organizes supplied information
 
 ## Frontier technologies
 
-Selected public work includes [Fault-Tolerant Quantum Computing Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/profiles/ftqc-assurance/README.md), [critical materials](https://github.com/Bridge-Node-7/materials-to-mission), [AI Cyber Assurance](https://github.com/Bridge-Node-7/ai-cyber-assurance), [Quantum Readiness for Space Communications](https://github.com/Bridge-Node-7/quantum-readiness-space-communications), and [Pax Silica Intelligence](https://github.com/Bridge-Node-7/pax-silica).
+Selected public work includes [Neutral-Atom FTQC](https://bridgenode7.com/neutral-atom-ftqc/), [critical materials](https://github.com/Bridge-Node-7/materials-to-mission), [AI Cyber Assurance](https://github.com/Bridge-Node-7/ai-cyber-assurance), [Quantum Readiness for Space Communications](https://github.com/Bridge-Node-7/quantum-readiness-space-communications), and [Pax Silica Intelligence](https://github.com/Bridge-Node-7/pax-silica).
 
 ## Innovation partnerships
 
