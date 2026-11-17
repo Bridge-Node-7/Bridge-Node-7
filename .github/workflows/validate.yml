@@ -219,7 +219,6 @@ jobs:
           set -euo pipefail
 
           declare -A expected_spdx=(
-            [frontier-mission-assurance]="NOASSERTION"
             [frontier-decision-engine]="Apache-2.0"
             [materials-to-mission]="MIT"
             [frontier-intelligence-workflows]="MIT"
@@ -236,17 +235,12 @@ jobs:
             curl --fail --silent --show-error --location               "https://raw.githubusercontent.com/Bridge-Node-7/$repo/main/LICENSE"               >/dev/null
           done
 
-          fma_license="$(curl --fail --silent --show-error --location             "https://raw.githubusercontent.com/Bridge-Node-7/frontier-mission-assurance/main/LICENSE")"
-          grep -F "All rights reserved." <<<"$fma_license" >/dev/null
-          grep -F "provided for evaluation and review only." <<<"$fma_license" >/dev/null
-
           expected_public_repos=(
             ".github"
             "Bridge-Node-7"
             "ai-cyber-assurance"
             "frontier-decision-engine"
             "frontier-intelligence-workflows"
-            "frontier-mission-assurance"
             "materials-to-mission"
             "pax-silica"
             "quantum-readiness-space-communications"
@@ -255,6 +249,12 @@ jobs:
           mapfile -t observed_public_repos < <(
             gh api "users/Bridge-Node-7/repos?type=owner&per_page=100" --jq '.[] | select(.fork == false) | .name'               | sort
           )
+
+          # FMA may be public before the authorized visibility change; afterward
+          # only the eight intended public repos are expected. Reject all other drift.
+          if printf '%s\n' "${observed_public_repos[@]}" | grep -Fxq "frontier-mission-assurance"; then
+            expected_public_repos+=("frontier-mission-assurance")
+          fi
 
           mapfile -t expected_public_repos_sorted < <(
             printf '%s\n' "${expected_public_repos[@]}" | sort
@@ -279,7 +279,6 @@ jobs:
             "ai-cyber-assurance"
             "frontier-decision-engine"
             "frontier-intelligence-workflows"
-            "frontier-mission-assurance"
             "materials-to-mission"
             "pax-silica"
             "quantum-readiness-space-communications"
