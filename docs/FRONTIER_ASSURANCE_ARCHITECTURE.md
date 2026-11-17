@@ -24,7 +24,7 @@ Evidence retains its source, stated limits, and uncertainty as it moves between 
 
 - **[Frontier Intelligence Workflows](https://github.com/Bridge-Node-7/frontier-intelligence-workflows):** trace claims to sources, distinguish independent evidence, and record open questions.
 - **[Materials-to-Mission](https://github.com/Bridge-Node-7/materials-to-mission):** relate selected materials, components, requirements, supplier information, and qualification gaps.
-- **[Frontier Mission Assurance](https://github.com/Bridge-Node-7/frontier-mission-assurance):** connect assumptions, evidence, dependencies, and reviews to a decision basis that can be revisited as inputs change.
+- **[Frontier Mission Assurance](https://bridgenode7.com/frontier-mission-assurance/):** connect assumptions, evidence, dependencies, and reviews to a decision basis that can be revisited as inputs change.
 - **[Frontier Decision Engine](https://github.com/Bridge-Node-7/frontier-decision-engine):** prepare human-governed decision briefs and bounded comparisons from supplied information.
 
 Each repository identifies its own supported interfaces, validation scope, and licensing terms. The references demonstrate methods; they do not, by themselves, establish scientific validity, supplier or hardware qualification, certification, or operational authorization.
@@ -48,4 +48,4 @@ Use a distinct repository only when it serves a distinct public purpose, user, r
 
 ## Explore
 
-[Decision lifecycle](DECISION_LIFECYCLE.md) · [Decision surface](DECISION_SURFACE.md) · [FMA evaluation](https://github.com/Bridge-Node-7/frontier-mission-assurance/blob/main/docs/FIVE_MINUTE_EVALUATION.md) · [Public governance](../GOVERNANCE.md) · [IP and publication boundaries](../IP_POLICY.md)
+[Decision lifecycle](DECISION_LIFECYCLE.md) · [Decision surface](DECISION_SURFACE.md) · [FMA overview](https://bridgenode7.com/frontier-mission-assurance/) · [Public governance](../GOVERNANCE.md) · [IP and publication boundaries](../IP_POLICY.md)
